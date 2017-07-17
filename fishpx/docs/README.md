@@ -11,6 +11,9 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
  Profile Page
  Production README
 
+Link to Trello:
+https://trello.com/b/XknjQKGQ/fish-px
+
 
  Implementation Timeline
 
