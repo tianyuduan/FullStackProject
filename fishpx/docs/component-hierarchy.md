@@ -49,4 +49,6 @@
 | "/home"          | "HomePage"             |
 | "/users/:userId" | "UserProfileContainer" |
 |"/photos/:photoId"|   "PhotoContainer"     |  
-|"/:tags"          |  "ContentContainer"    |  **defaults to fishpx.com/popular upon logging in 
+|"/:tags"          |  "ContentContainer"    |  
+
+- Tags: defaults to fishpx.com/popular upon logging in
