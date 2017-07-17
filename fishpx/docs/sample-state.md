@@ -1,3 +1,5 @@
+```js
+
 {
   session: {
     currentUser: {
@@ -23,3 +25,5 @@
     }
   }
 }
+
+```
