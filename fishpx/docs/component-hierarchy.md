@@ -1,10 +1,9 @@
 ## Component Hierarchy
 
-**Home Page**
+**Home Container**
   - HomeHeader
   - Link(s) to AuthForm
-  - Home
-  - Navbar
+  - Home Content
   - Photos Index
   - Footer
 
@@ -13,31 +12,22 @@
 
 **ContentContainer**
   - Header
-  - Navbar
+  - Navbar w Tags
   - Photos Index
-  - Tags
   - Footer
+
+**PhotoContainer**-
+  - Aside Detail
+  - Bonus* Photo nav
+
+  - Likes, Comments, views container
+
+**Photo Upload**
+  - Upload Form
 
 **User Profile Container**
   - User Section
   - Photos Index
-  - Follows Container
-
-
-**Follows Container**
-  - Follows Header
-  - Follows Index
-
-**PhotoContainer**-
-  - Photo Container
-  - Aside Detail
-  - Bonus* Photo nav
-  - Follow User/User Info Container
-  - Likes, fav, views container
-
-
-**Photo Upload**
-  - Upload Form
 
 
 ## Routes

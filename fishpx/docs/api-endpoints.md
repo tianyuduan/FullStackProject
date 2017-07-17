@@ -22,18 +22,25 @@
 
 ### Photos
 
-- `GET /api/photos`
+- `GET /api/photos` Can take tagId
 - `POST /api/photos`
 - `GET /api/photos/:id`
 - `PATCH /api/photos/:id`
 - `DELETE /api/photos/:id`
 
-### Follows --need a little help here
+### Tags
 
-- `POST /api/users/follows`
-- `DELETE /api/users/follows/:followingId`
+- `GET /api/tags` can take photoId
+- `GET /api/tags/:id`
+- `POST /api/tags` user can make tags
 
-### favorites
+### Follows
+
+- `POST /api/follows`
+- `GET /api/follows`
+- `DELETE /api/follows/:id`
+
+### likes
 - `GET /api/photos/:id/likes` -Gets all the likes for a specific photo
-- `PATCH /api/photos/:id/likes` -adds a like to a photo
+- `POST /api/photos/:id/likes` - causes current_user to like the photo
 - `DELETE /api/photos/:id/likes` -delete a like from a photo

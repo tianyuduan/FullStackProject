@@ -16,11 +16,9 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] Home Page
-- [ ] View Photography via categories/tags
+- [ ] Content Page via categories/tags
 - [ ] Upload/Post Photography
-- [ ] Follows
-- [ ] Home Feed
-- [ ] Profile Page
+- [ ] Follows, Likes, Comments
 - [ ] Production README
 
 ## Design Docs
@@ -30,11 +28,11 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: /docs/wireframes
-[components]: /docs/component-hierarchy.md
-[sample-state]: /docs/sample-state.md
-[api-endpoints]: /docs/api-endpoints.md
-[schema]: /docs/schema.md
+[wireframes]: ./wireframes
+[components]: ./component-hierarchy.md
+[sample-state]: ./sample-state.md
+[api-endpoints]: ./api-endpoints.md
+[schema]: ./schema.md
 
 ## Implementation Timeline
 
@@ -51,24 +49,27 @@ the API.
 
 **Objective:** Seed Photos to be viewed at Home Screen.
 
-### Phase 4: Profile Page (1 day)
-
-**Objective:** Profile page displays the user's details and photos.
-
-### Phase 5: Follows/Likes (1 day)
-
-**Objective:** User can follow/unfollow other users. User's profile page lists followers and followings. User can Like an image. Each image will have an Like Counter.
-
-### Phase 6: Image Upload (1 day)
+### Phase 4: Image Upload (1 day)
 
 **Objective:** Uploads images with tags, title and description.
 
-### Phase 7: Content Feed Setup/with Tags (1 day)
+### Phase 5: Content Page (1 day)
 
-**Objective:**  Objective: Content Page displays all photos from users, able to filter through pictures with tags.
+**Objective:** Content Page displays all photos from users.
+
+### Phase 6: Content Page Setup/with Tags (1 day)
+
+**Objective:**  Objective: Content Page displays all photos, able to filter through pictures with tags.
+
+### Phase 7: Comments/Likes (1 day)
+
+**Objective:** User can comment on other User's Photos. User can Like an image. Each image will have an Like Counter.
+
+
 
 ### Bonus Features (TBD)
 - [ ] Infinite scroll
 - [ ] Discover Page
 - [ ] Search Photos
-- [ ] Comments
+- [ ] Follows
+- [ ] Profile Page

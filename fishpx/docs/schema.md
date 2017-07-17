@@ -19,7 +19,20 @@ image_url   | url       | not null
 title       | string    | not null
 description | string    |
 
-## favorite
+##tags
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+tag_name    | string    | not null, foreign key
+
+##photo_tags
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+photo_id    | integer   | not null, foreign key
+tag_id      | integer   | not null, foreign key
+
+## likes
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
