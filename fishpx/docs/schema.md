@@ -10,7 +10,7 @@ session_token   | string    | not null, indexed, unique
 background_photo| string    |
 thumbnail       | string    |
 
-##images
+## images
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -19,13 +19,13 @@ image_url   | url       | not null
 title       | string    | not null
 description | string    |
 
-##tags
+## tags
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 tag_name    | string    | not null, foreign key
 
-##photo_tags
+## photo_tags
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key

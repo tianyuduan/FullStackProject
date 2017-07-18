@@ -34,13 +34,13 @@
 - `GET /api/tags/:id`
 - `POST /api/tags` user can make tags
 
-### Follows
-
-- `POST /api/follows`
-- `GET /api/follows`
-- `DELETE /api/follows/:id`
-
 ### Likes
 - `GET /api/photos/:id/likes` -Gets all the likes for a specific photo
 - `POST /api/photos/:id/likes` - causes current_user to like the photo
 - `DELETE /api/photos/:id/likes` -delete a like from a photo
+
+### Follows *Bonus*
+
+- `POST /api/follows`
+- `GET /api/follows`
+- `DELETE /api/follows/:id`
