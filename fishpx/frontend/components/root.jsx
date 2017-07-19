@@ -9,7 +9,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 const Root = ({ store }) => (
   <Provider store={store}>
     <HashRouter>
+      <MuiThemeProvider>
         <App />
+        </MuiThemeProvider>
     </HashRouter>
   </Provider>
 );

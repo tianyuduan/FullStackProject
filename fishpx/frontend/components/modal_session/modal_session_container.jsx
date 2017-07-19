@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { login, logout, signup } from '../../actions/session_actions';
-import SessionForm from './session_form';
+import ModalSession from './modal_session.jsx';
 
 
 const mapStateToProps = ({ session }) => {
@@ -23,4 +23,4 @@ const mapDispatchToProps = (dispatch, { location }) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SessionForm);
+)(ModalSession);

@@ -8,6 +8,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+import GridListExampleSimple from '../image_grid/image_grid.jsx';
+import DialogExampleModal from '../modal_session/modal_session.jsx';
+
 injectTapEventPlugin();
 
 
@@ -32,6 +35,8 @@ const sessionLinks = () => (
     <Link to="/login">Login</Link>
     &nbsp;or&nbsp;
     <Link to="/signup">Sign up!</Link>
+    <GridListExampleSimple/>
+    <DialogExampleModal/>
   </nav>
 );
 

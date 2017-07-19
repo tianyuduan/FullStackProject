@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import DialogExampleModal from '../modal_session/modal_session.jsx';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -16,6 +17,11 @@ class SessionForm extends React.Component {
       this.props.history.push('/');
     }
   }
+  //router has props called history, hold all the routes, its an array, adds next route to stack,
+  //redirects to stack
+  //clicks/login, dont want to rediirect if same route,
+  //back on browser , saves
+  //new props => updates
 
   update(field) {
     return e => this.setState({
