@@ -10,6 +10,23 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 injectTapEventPlugin();
 
+
+const muiTheme = getMuiTheme({
+  palette: {
+    textColor: cyan500,
+  },
+  appBar: {
+    height: 50,
+  },
+});
+
+// MuiThemeProvider takes the theme as a property and passed it down the hierarchy.
+const Main = () => (
+  <MuiThemeProvider muiTheme={muiTheme}>
+    <AppBar title="Welcome to Fish Px!" />
+  </MuiThemeProvider>
+);
+
 const sessionLinks = () => (
   <nav className="login-signup">
     <Link to="/login">Login</Link>
@@ -31,24 +48,6 @@ const Greeting = ({ currentUser, logout }) => (
 );
 
 export default Greeting;
-
-const muiTheme = getMuiTheme({
-  palette: {
-    textColor: cyan500,
-  },
-  appBar: {
-    height: 50,
-  },
-});
-
-// MuiThemeProvider takes the theme as a property and passed it down the hierarchy.
-const Main = () => (
-  <MuiThemeProvider muiTheme={muiTheme}>
-    <AppBar title="Welcome to Fish Px!" />
-  </MuiThemeProvider>
-);
-
-
 
 
 //styling
