@@ -1,43 +1,44 @@
-HomePage
-  HomeHeader
-  Link(s) to AuthForm
-  Home
-  Navbar
-  Photos Index
-  Footer
+## Component Hierarchy
 
-ContentContainer
-  Header
-  Navbar
-  Photos Index
-  Tags
-  Footer
+**Home Container**
+  - HomeHeader
+  - Link(s) to AuthForm
+  - Home Content
+  - Photos Index
+  - Footer
 
-AuthForm(SignIn-logIn)
-  AuthForm
+**AuthForm Container(SignIn-logIn)**
+  - AuthForm
 
-User Profile Container
-  User Section
-  Photos Index
-  Follows Container
+**ContentContainer**
+  - Header
+  - Navbar w Tags
+  - Photos Index
+  - Footer
 
-PhotoContainer
-  Photo Container
-  Aside Detail
-  Bonus* Photo nav
-  Follow User/User Info Container
-  Likes, fav, views container
+**PhotoContainer**-
+  - Aside Detail
+  - Bonus* Photo nav
 
-Photo Upload
-  Upload Form
+  - Likes, Comments, views container
+
+**Photo Upload**
+  - Upload Form
+
+**User Profile Container**
+  - User Section
+  - Photos Index
 
 
-Routes
+## Routes
 
-  Path	Component
-  "/"	"AuthFormContainer"
-  "/"	"ContentContainer"
-  "/home"	"HomePage"
-  "/users/:userId"	"UserProfileContainer"
-  "/photos/:photoId" "PhotoContainer"
-  "/:tags" "ContentContainer" *defaults to fishpx.com/popular upon logging in 
+|       Path       |      Component         |
+|------------------|------------------------|
+| "/"              | "AuthFormContainer"    |
+| "/"              | "ContentContainer"     |
+| "/home"          | "HomePage"             |
+| "/users/:userId" | "UserProfileContainer" |
+|"/photos/:photoId"|   "PhotoContainer"     |  
+|"/:tags"          |  "ContentContainer"    |  
+
+- Tags: defaults to fishpx.com/popular upon logging in
