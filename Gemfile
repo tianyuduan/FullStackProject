@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'pry-rails'
 
+gem 'paperclip', '~>5.0.0beta1'
+
 gem 'rails_12factor'
 
 gem 'jquery-rails'

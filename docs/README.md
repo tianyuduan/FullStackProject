@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: https://herokuapp.com/
+[heroku]: https://fishpx.herokuapp.com/
 [trello]: https://trello.com/b/XknjQKGQ/fish-px
 
 ## Minimum Viable Product
