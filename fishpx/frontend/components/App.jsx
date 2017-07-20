@@ -1,8 +1,8 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
 import { Route, Switch } from 'react-router-dom';
-import SessionFormContainer from "./session_form/session_form_container.jsx";
-import ModalSessionContainer from './modal_session/modal_session_container.jsx';
+import SessionFormContainer from "./session_form/session_form_container.js";
+import ModalSessionContainer from './modal_session/modal_session_container.js';
 import HomePageContainer from './homepage/homepage_container.js';
 import { AuthRoute } from '../util/route_util.jsx';
 import  GridListExampleSimple from './image_grid/image_grid.jsx';
@@ -17,10 +17,7 @@ const App = () => (
       <GreetingContainer/>
     </header>
 
-    <Switch>
-       <AuthRoute path="/login" component={ModalSessionContainer} />
-       <AuthRoute path="/signup" component={ModalSessionContainer} />
-   </Switch>
+
   </div>
 );
 

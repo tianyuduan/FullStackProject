@@ -9,7 +9,7 @@ import AppBar from 'material-ui/AppBar';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import GridListExampleSimple from '../image_grid/image_grid.jsx';
-import DialogExampleModal from '../modal_session/modal_session.jsx';
+import ModalSessionContainer from '../modal_session/modal_session_container.js';
 
 injectTapEventPlugin();
 
@@ -25,18 +25,13 @@ const muiTheme = getMuiTheme({
 
 // MuiThemeProvider takes the theme as a property and passed it down the hierarchy.
 const Main = () => (
-  <MuiThemeProvider muiTheme={muiTheme}>
     <AppBar title="Welcome to Fish Px!" />
-  </MuiThemeProvider>
 );
 
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to="/login">Login</Link>
-    &nbsp;or&nbsp;
-    <Link to="/signup">Sign up!</Link>
+const grid = () => (
+  <nav className="image_grid">
+    <ModalSessionContainer/>
     <GridListExampleSimple/>
-    <DialogExampleModal/>
   </nav>
 );
 
@@ -49,7 +44,7 @@ const personalGreeting = (currentUser, logout) => (
 );
 
 const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+  currentUser ? personalGreeting(currentUser, logout) : grid()
 );
 
 export default Greeting;

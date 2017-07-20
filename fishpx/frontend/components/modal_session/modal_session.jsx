@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-
+import TextField from 'material-ui/TextField';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
-/**
- * A modal dialog can only be closed by selecting one of the actions.
- */
 class ModalSession extends React.Component {
 
   constructor(props) {
@@ -20,7 +17,8 @@ class ModalSession extends React.Component {
     };
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmitLogin = this.handleSubmitLogin.bind(this);
+    this.handleSubmitSignup = this.handleSubmitSignup.bind(this);
   }
 
   handleOpen() {
@@ -32,18 +30,24 @@ class ModalSession extends React.Component {
   }
 
 
-  handleSubmit(e) {
+  handleSubmitLogin(e) {
     e.preventDefault();
     const user = this.state;
-    console.log(user);
-    this.props.processForm({user});
+    console.log(this);
+    this.props.login({user});
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
+  handleSubmitSignup(e) {
+    e.preventDefault();
+    const user = this.state;
+      this.props.signup({user});
   }
+  //
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.loggedIn) {
+  //     this.props.history.push('/');
+  //   }
+  // }
 
   update(field) {
     return e => this.setState({
@@ -52,13 +56,13 @@ class ModalSession extends React.Component {
   }
 
 
-  navLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
-    } else {
-      return <Link to="/login">log in instead</Link>;
-    }
-  }
+  // navLink() {
+  //   if (this.props.formType === 'login') {
+  //     return <Link to="/signup">sign up instead</Link>;
+  //   } else {
+  //     return <Link to="/login">log in instead</Link>;
+  //   }
+  // }
 
   renderErrors() {
     return(
@@ -73,7 +77,7 @@ class ModalSession extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const actions = [
       <FlatButton
         label="Cancel"
@@ -83,14 +87,16 @@ class ModalSession extends React.Component {
       <FlatButton
         label="Submit"
         primary={true}
-        disabled={true}
+        disabled={false}
         onTouchTap={this.handleClose}
+        onClick = {this.handleSubmitLogin}
       />,
     ];
 
     return (
-      <div className="login-form-container">
-        <RaisedButton label="Sign In" onTouchTap={this.handleOpen} />
+      <div className="form-container">
+        <RaisedButton label="Log In" onTouchTap={this.handleOpen} />
+        <RaisedButton label="Sign Up" onTouchTap={this.handleOpen} />
         <Dialog
           title="Welcome to FishPx"
           actions={actions}
@@ -98,29 +104,27 @@ class ModalSession extends React.Component {
           open={this.state.open}
         >
           Please input your user credentials
+            {this.renderErrors()}
 
-      Please {this.props.formType} or {this.navLink()}
-      <form onSubmit={this.handleSubmit} className="login-form-box">
         <div className="login-form">
           <br/>
-          <label>Username:
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              className="login-input"
-            />
+          <label className="inputLabel" >Username:
           </label>
+          <TextField id="1" className="textfield1" type="text"
+            value={this.state.username}
+            onChange={this.update('username')}
+            className="login-input"
+            hintText="  John Doe "
+            />
           <br/>
-          <label>Password:
-            <input type="password"
+          <label className="passwordLabel">Password:
+          </label>
+            <TextField id="2" type="password"
               value={this.state.password}
               onChange={this.update('password')}
               className="login-input"
             />
-          </label>
-            <input type="submit" value="Submit" />
           </div>
-        </form>
         </Dialog>
       </div>
     );

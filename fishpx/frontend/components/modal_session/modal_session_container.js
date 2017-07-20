@@ -11,14 +11,10 @@ const mapStateToProps = ({ session }) => {
   };
 };
 //location is a prop from react router
-const mapDispatchToProps = (dispatch, { location }) => {
-  const formType = location.pathname.slice(1); // /login
-  const processForm = (formType === 'login') ? login : signup;
-  return {
-    processForm: user => dispatch(processForm(user)),
-    formType
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+login: (user) => dispatch(login(user)),
+signup: (user) => dispatch(login(user))
+});
 
 export default connect(
   mapStateToProps,
