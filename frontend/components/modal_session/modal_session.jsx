@@ -23,7 +23,6 @@ class ModalSession extends React.Component {
   }
 
   handleOpen(formType) {
-    console.log(formType);
     return () => (this.setState({open: true, formType: formType}));
   }
 
@@ -82,7 +81,6 @@ class ModalSession extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
     const actions = [
       <FlatButton
         label="Cancel"
