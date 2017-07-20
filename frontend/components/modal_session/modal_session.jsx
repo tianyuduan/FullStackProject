@@ -14,6 +14,7 @@ class ModalSession extends React.Component {
       username: '',
       password: '',
       open: false,
+      formType: "Login"
     };
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -21,8 +22,9 @@ class ModalSession extends React.Component {
     this.handleSubmitSignup = this.handleSubmitSignup.bind(this);
   }
 
-  handleOpen() {
-    this.setState({open: true});
+  handleOpen(formType) {
+    console.log(formType);
+    return () => (this.setState({open: true, formType: formType}));
   }
 
   handleClose() {
@@ -32,14 +34,17 @@ class ModalSession extends React.Component {
 
   handleSubmitLogin(e) {
     e.preventDefault();
-    const user = this.state;
-    console.log(this);
+    const username = this.state.username;
+    const password = this.state.password;
+    const user = {username: username, password: password};
     this.props.login({user});
   }
 
   handleSubmitSignup(e) {
     e.preventDefault();
-    const user = this.state;
+    const username = this.state.username;
+    const password = this.state.password;
+    const user = {username: username, password: password};
       this.props.signup({user});
   }
   //
@@ -85,26 +90,41 @@ class ModalSession extends React.Component {
         onTouchTap={this.handleClose}
       />,
       <FlatButton
-        label="Submit"
+        label="Login"
         primary={true}
         disabled={false}
-        onTouchTap={this.handleClose}
         onClick = {this.handleSubmitLogin}
+        onTouchTap={this.renderErrors() ? this.renderErrors : this.handleClose}
+      />,
+    ];
+
+    const actions2 = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleClose}
+      />,
+      <FlatButton
+        label="Sign Up"
+        primary={true}
+        disabled={false}
+        onClick = {this.handleSubmitSignup}
+        onTouchTap={this.renderErrors() ? this.renderErrors : this.handleClose}
       />,
     ];
 
     return (
-      <div className="form-container">
-        <RaisedButton label="Log In" onTouchTap={this.handleOpen} />
-        <RaisedButton label="Sign Up" onTouchTap={this.handleOpen} />
+      <div className="Login-form-container">
+        <RaisedButton label="Log In" onTouchTap={this.handleOpen("Login")} />
+        <RaisedButton label="Sign Up" onTouchTap={this.handleOpen("Signup")} />
         <Dialog
           title="Welcome to FishPx"
-          actions={actions}
+          actions={ this.state.formType === "Login" ? actions : actions2}
           modal={true}
           open={this.state.open}
         >
           Please input your user credentials
-            {this.renderErrors()}
+              {this.renderErrors()}
 
         <div className="login-form">
           <br/>
