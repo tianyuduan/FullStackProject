@@ -10,6 +10,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import GridListExampleSimple from '../image_grid/image_grid.jsx';
 import ModalSessionContainer from '../modal_session/modal_session_container.js';
+import HeaderHome from '../header/header.jsx';
 
 injectTapEventPlugin();
 
@@ -31,6 +32,7 @@ const Main = () => (
 const grid = () => (
   <nav className="image_grid">
     <ModalSessionContainer/>
+    <HeaderHome></HeaderHome>
     <GridListExampleSimple/>
   </nav>
 );
