@@ -32,17 +32,12 @@ class ModalSession extends React.Component {
   }
 
 
-  handleDemo() {
-    this.setState({
-      username: 'skyfish',
-      password: '123456'
-    }
-  )
-  ;
-  console.log(this.state);
+  handleDemo(e) {
+  e.preventDefault();
+  const user = {username: 'GUEST', password: '123456'};
+  this.props.login({user});
+}
 
-
-  }
   handleSubmitLogin(e) {
     e.preventDefault();
     const username = this.state.username;
@@ -104,14 +99,13 @@ class ModalSession extends React.Component {
         primary={true}
         disabled={false}
         onClick = {this.handleSubmitLogin}
-        onTouchTap={this.renderErrors() ? this.renderErrors : this.handleClose}
+        onTouchTap={this.renderErrors ? this.renderErrors : this.handleClose}
       />,
       <FlatButton
         label="Demo"
         primary={true}
         disabled={false}
         onClick = {this.handleDemo}
-        onClick = {this.handleSubmitLogin}
         onTouchTap={this.handleClose}
 
       />,
@@ -128,14 +122,13 @@ class ModalSession extends React.Component {
         primary={true}
         disabled={false}
         onClick = {this.handleSubmitSignup}
-        onTouchTap={this.renderErrors() ? this.renderErrors : this.handleClose}
+        onTouchTap={this.renderErrors ? this.renderErrors : this.handleClose}
       />,
       <FlatButton
         label="Demo"
         primary={true}
         disabled={false}
         onClick = {this.handleDemo}
-        onClick = {this.handleSubmitLogin}
         onTouchTap={this.handleClose}
       />,
     ];
@@ -144,19 +137,35 @@ class ModalSession extends React.Component {
       <div className="Login-form-container">
         <div className="login">
         <FlatButton label="Log In"
+          labelStyle={{ color: 'white',
+            fontSize: 20,
+            fontFamily: "sans-serif",
+            fontWeight: "bold",
+            textShadow: "1px 1px #0C090A"
+          }}
           disabled={false}
-          secondary={true}
           onTouchTap={this.handleOpen("Login")}
           className="Login"
-          style={{width: '80px', marginLeft: '90%', fontFamily: 'Roboto, sans-serif', fontSize: '63px'}}/>
+          style={{width: '200px',
+            marginLeft: '625%',
+            borderRadius: "10px"
+          }}/>
         </div>
         <div className="signup">
         <FlatButton label="Sign Up"
-          secondary={true}
+          labelStyle={{ color: 'white',
+            fontSize: 20,
+            fontFamily: "sans-serif",
+            fontWeight: "bold",
+            textShadow: "1px 1px #0C090A"}}
           disabled={false}
           onTouchTap={this.handleOpen("Signup")}
           className="Signup"
-          style={{width: '100px',marginRight: '100%', marginTop: '-40%', labelColor: grey50}}/>
+          style={{width: '200px',
+            marginLeft: '575%',
+            marginTop: '-40%',
+            borderRadius: "10px"
+            }}/>
         </div>
         <Dialog
           title="Welcome to FishPx"

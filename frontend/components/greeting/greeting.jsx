@@ -11,6 +11,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import GridListExampleSimple from '../image_grid/image_grid.jsx';
 import ModalSessionContainer from '../modal_session/modal_session_container.js';
 import HeaderHome from '../header/header.jsx';
+import ContentHome from '../content/content.jsx';
 
 injectTapEventPlugin();
 
@@ -26,7 +27,9 @@ const muiTheme = getMuiTheme({
 
 // MuiThemeProvider takes the theme as a property and passed it down the hierarchy.
 const Main = () => (
-    <AppBar title="Welcome to Fish Px!" />
+    <h1>
+    <ContentHome/>
+    </h1>
 );
 
 const grid = () => (
