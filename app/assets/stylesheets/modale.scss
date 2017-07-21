@@ -6,22 +6,37 @@
 .Login-form-container {
   position: absolute;
   top: 20px;
+  right: 20px;
 
 }
 
 .login {
 
+  // display: inline-block;
     // margin-left: 70%;
     // background-color: transparent;
     // font-family: 'Josefin Slab', serif;
     // text-shadow: 2px 2px #0C090A;;
+
+    display: inline-block;
+
+    // span {
+    //   color: red !important;
+    //   border: 2px red;
+    // }
 }
+
+
 .signup {
-  // border: 2px red solid;
-  // background: transparent;
-  // font-family: 'Josefin Slab', serif;
-  // text-shadow: 2px 2px #0C090A;
-    border-radius: 10px;
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 10px;
+
+}
+
+.Signup {
+
+
 }
 
 
