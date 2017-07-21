@@ -13,7 +13,7 @@ const mapStateToProps = ({ session }) => {
 //location is a prop from react router
 const mapDispatchToProps = (dispatch) => ({
 login: (user) => dispatch(login(user)),
-signup: (user) => dispatch(login(user))
+signup: (user) => dispatch(signup(user))
 });
 
 export default connect(
