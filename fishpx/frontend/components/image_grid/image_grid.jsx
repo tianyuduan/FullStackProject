@@ -3,6 +3,7 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import Gallery from 'react-grid-gallery';
 
 const styles = {
   root: {
@@ -11,8 +12,9 @@ const styles = {
     justifyContent: 'space-around',
   },
   gridList: {
-    width: '95%',
-    overflowY: "hidden"
+    width: "95%",
+    height: 450,
+    overflowY: 'hidden',
   },
 };
 
@@ -69,27 +71,80 @@ const tilesData = [
   },
 ];
 
+const IMAGES =
+[{
+        src: "https://res.cloudinary.com/djubcegxh/image/upload/v1500486778/cwvvwceewd3x1ih5ayhv.jpg",
+        thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375/v1500486778/cwvvwceewd3x1ih5ayhv.jpg",
+        thumbnailWidth: 572,
+        thumbnailHeight: 375,
+        caption: "Sunset"
+},
+{
+        src: "http://res.cloudinary.com/djubcegxh/image/upload/v1500497541/Beautiful-Tortoise-Photography_gez5t4.jpg",
+        thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375/v1500497541/Beautiful-Tortoise-Photography_gez5t4.jpg",
+        thumbnailWidth: 546,
+        thumbnailHeight: 375,
+        caption: "Boats (Jeshu John - designerspics.com)"
+},
+
+{
+        src: "http://res.cloudinary.com/djubcegxh/image/upload/v1500497556/Swimmer-Among-Fishes_g1cmu3.jpg",
+        thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375/v1500497556/Swimmer-Among-Fishes_g1cmu3.jpg",
+        thumbnailWidth: 643,
+        thumbnailHeight: 375,
+},
+
+{
+        src: "http://res.cloudinary.com/djubcegxh/image/upload/v1500497557/Underwater-Animal-Fish-Photography_ihvxf9.jpg",
+        thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375/v1500497557/Underwater-Animal-Fish-Photography_ihvxf9.jpg",
+        thumbnailWidth: 667,
+        thumbnailHeight: 375,
+        caption: "Boats (Jeshu John - designerspics.com)"
+},
+{
+        src: "http://res.cloudinary.com/djubcegxh/image/upload/v1500497558/Women-Underwater-Photoshoot_tno4um.jpg",
+        thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375/v1500497558/Women-Underwater-Photoshoot_tno4um.jpg",
+        thumbnailWidth: 563,
+        thumbnailHeight: 375,
+        caption: "Boats (Jeshu John - designerspics.com)"
+},
+{
+        src: "http://res.cloudinary.com/djubcegxh/image/upload/v1500486853/gflf73xqquslg0ohotkh.jpg",
+        thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375,w_625/v1500486853/gflf73xqquslg0ohotkh.jpg",
+        thumbnailWidth: 625,
+        thumbnailHeight: 375,
+        caption: "Boats (Jeshu John - designerspics.com)"
+},
+{
+        src: "http://res.cloudinary.com/djubcegxh/image/upload/v1500497542/Creatues-Underwater-Photography_klinki.jpg",
+        thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375/v1500497542/Creatues-Underwater-Photography_klinki.jpg",
+        thumbnailWidth: 564,
+        thumbnailHeight: 375,
+        caption: "Boats (Jeshu John - designerspics.com)"
+},
+{
+        src: "http://res.cloudinary.com/djubcegxh/image/upload/v1500497558/Underwater-Marine-Life-Photography_llscav.jpg",
+        thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375,w_563/v1500497558/Underwater-Marine-Life-Photography_llscav.jpg",
+        thumbnailWidth: 563,
+        thumbnailHeight: 375,
+        caption: "Boats (Jeshu John - designerspics.com)"
+},
+{
+        src: "http://res.cloudinary.com/djubcegxh/image/upload/v1500490632/Underwater-Fish-Photography_crbs43.jpg",
+        thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375/v1500490632/Underwater-Fish-Photography_crbs43.jpg",
+        thumbnailWidth: 549,
+        thumbnailHeight: 375,
+        caption: "Boats (Jeshu John - designerspics.com)"
+},
+];
 /**
  * A simple example of a scrollable `GridList` containing a [Subheader](/#/components/subheader).
  */
 const GridListExampleSimple = () => (
 
-  <div style={styles.root}>
-    <GridList
-      cellHeight={500}
-      style={styles.gridList}
-    >
-      <Subheader>Popular</Subheader>
-      {tilesData.map((tile) => (
-        <GridTile
-          key={tile.img}
-          title={tile.title}
-          subtitle={<span>by <b>{tile.author}</b></span>}>
-          <img src={tile.img} />
-        </GridTile>
-      ))}
-    </GridList>
-  </div>
+    <div className='image-grid' >
+    <Gallery images={IMAGES} rowHeight={375} margin= {5}/>,
+    </div>
 );
 
 export default GridListExampleSimple;

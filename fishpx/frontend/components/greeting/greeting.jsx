@@ -12,6 +12,8 @@ import GridListExampleSimple from '../image_grid/image_grid.jsx';
 import ModalSessionContainer from '../modal_session/modal_session_container.js';
 import HeaderHome from '../header/header.jsx';
 import ContentHome from '../content/content.jsx';
+import PhotosIndex from '../photos/photos_index.jsx';
+import ModalUpload from '../modal_upload/modal_upload.jsx';
 
 injectTapEventPlugin();
 
@@ -28,14 +30,21 @@ const muiTheme = getMuiTheme({
 // MuiThemeProvider takes the theme as a property and passed it down the hierarchy.
 const Main = () => (
     <h1>
-    <ContentHome/>
+    <HeaderHome></HeaderHome>
+    <ModalUpload/>
     </h1>
 );
 
 const grid = () => (
   <nav className="image_grid">
     <ModalSessionContainer/>
-    <HeaderHome></HeaderHome>
+    <ContentHome/>
+
+    <div className = "after-header-text-container">
+      <div>The Top Photos Chosen By You</div>
+      <div className='description'>Become part of a community that celebrates incredible photography.</div>
+    </div>
+
     <GridListExampleSimple/>
   </nav>
 );

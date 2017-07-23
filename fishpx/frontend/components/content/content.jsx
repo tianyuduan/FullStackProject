@@ -16,7 +16,7 @@ const ContentHome = () => (
   <div className= "Video">
     <h1 className= "video_font_1">Explore Another World</h1>
     <h1 className= "video_font_2">Discover the depths of the unknown</h1>
-    <video width="100%" height="700" autoPlay loop>
+    <video autoPlay loop>
     <source src="http://res.cloudinary.com/djubcegxh/video/upload/v1500601586/featured-vid_pnhmuh.mp4"
       type="video/mp4"
       ></source>

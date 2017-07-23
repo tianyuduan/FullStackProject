@@ -1,0 +1,206 @@
+/* line 1, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/content.scss */
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-size: cover;
+}
+
+/* line 9, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/content.scss */
+.video_font_1 {
+  font-family: sans-serif;
+  font-size: 72px;
+  color: white;
+  margin-top: 35%;
+  text-indent: 60px;
+  text-shadow: 2px 2px #0C090A;
+  font-weight: bold;
+}
+
+/* line 19, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/content.scss */
+.video_font_2 {
+  font-family: sans-serif;
+  font-size: 48px;
+  color: white;
+  margin-top: 0%;
+  text-indent: 80px;
+  text-shadow: 2px 2px #0C090A;
+}
+/* line 4, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+.header1Text {
+  position: absolute;
+  z-index: 1;
+  width: 900px;
+  font-weight: bold;
+  text-align: center;
+  top: 500px;
+  top: calc(50% + 100px);
+  font-size: 56px;
+}
+
+/* line 15, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+.header2Text {
+  position: relative;
+  z-index: 1;
+  width: 1200px;
+  text-align: center;
+  top: 650px;
+  top: calc(70% + 50px);
+  font-size: 32px;
+}
+
+/* line 25, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+.Wrap {
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  background-image: url("http://res.cloudinary.com/djubcegxh/image/upload/v1500567256/fbd0b712d0090ce83aefc9284dfbb759_1_qynzgy.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: -200px;
+  width: 100%;
+  background-position: 50% 70%;
+}
+
+/* line 45, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+  display: flex;
+}
+
+/* line 51, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+.header2Text, .header1Text {
+  font-family: 'Josefin Slab', serif;
+  text-shadow: 2px 2px #0C090A;
+  color: white;
+}
+
+/* line 58, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 64, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+html, body {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+/* line 6, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/modale.scss */
+.Login-form-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* line 13, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/modale.scss */
+.login {
+  display: inline-block;
+}
+
+/* line 30, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/modale.scss */
+.signup {
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+/* line 43, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/modale.scss */
+.inputLabel {
+  margin-right: 50px;
+}
+
+/* line 48, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/modale.scss */
+.passwordLabel {
+  margin-right: 50px;
+}
+/* PHASE 0: Reset */
+/* line 4, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 22, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 26, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 32, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 47, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 54, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+
+

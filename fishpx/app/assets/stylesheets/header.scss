@@ -8,22 +8,24 @@
   font-weight: bold;
   text-align: center;
   top: 500px;
+  top: calc(50% + 100px);
   font-size: 56px;
 }
 
 .header2Text {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  width: 900px;
+  width: 1200px;
   text-align: center;
   top: 650px;
+  top: calc(70% + 50px);
   font-size: 32px;
 }
 
 .Wrap {
-  height: 800px;
-  left: 0;
-  right: 0;
+  height: 100vh;
+  // left: 0;
+  // right: 0;
   overflow: hidden;
   z-index: 0;
   display: flex;
@@ -31,7 +33,7 @@
   background-image: url("http://res.cloudinary.com/djubcegxh/image/upload/v1500567256/fbd0b712d0090ce83aefc9284dfbb759_1_qynzgy.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-size: 100%;
+  // background-size: 100%;
   top: -200px;
   width: 100%;
   background-position: 50% 70%;
