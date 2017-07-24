@@ -10,9 +10,9 @@ export const receivePhotos = photos => ({
   photos
 });
 
-export const receivePhoto = photos => ({
+export const receivePhoto = photo => ({
   type: RECEIVE_PHOTO,
-  photos
+  photo
 });
 
 export const removePhoto = photo => ({
@@ -42,7 +42,7 @@ export const fetchPhoto = id => dispatch => (
 );
 
 export const createPhoto = photo => dispatch => (
-  APIUtil.fetchPhotos(photo).then(
+  APIUtil.createPhoto(photo).then(
     photo => (dispatch(receivePhoto(photo))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
@@ -66,3 +66,6 @@ export const updatePhoto = photo => dispatch => (
 );
 
 window.fetchPhotos = fetchPhotos;
+window.fetchPhoto = fetchPhoto;
+window.createPhoto = createPhoto;
+window.deletePhoto = deletePhoto;

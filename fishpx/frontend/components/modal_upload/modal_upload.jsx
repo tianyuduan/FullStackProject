@@ -11,7 +11,7 @@ class ModalUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
+    title: "",
      description: "",
      image_url: "",
      tags: "",

@@ -12,7 +12,7 @@ import GridListExampleSimple from '../image_grid/image_grid.jsx';
 import ModalSessionContainer from '../modal_session/modal_session_container.js';
 import HeaderHome from '../header/header.jsx';
 import ContentHome from '../content/content.jsx';
-import PhotosIndex from '../photos/photos_index.jsx';
+import PhotosIndexContainer from '../photos/photos_index_container.js';
 import ModalUpload from '../modal_upload/modal_upload.jsx';
 import FooterHome from '../footer/footer.jsx';
 import Logo from '../logo/logo.jsx';
@@ -25,6 +25,7 @@ injectTapEventPlugin();
 const Main = () => (
     <h1>
     <HeaderHome></HeaderHome>
+    <PhotosIndexContainer/>
     <ModalUpload/>
     </h1>
 );
