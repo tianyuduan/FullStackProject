@@ -1,0 +1,33 @@
+/* line 1, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/content.scss */
+video {
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  z-index: -100;
+  background-size: cover;
+  width: 100vw;
+}
+
+/* line 10, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/content.scss */
+.video_font_1 {
+  font-family: sans-serif;
+  font-size: 72px;
+  color: white;
+  margin-top: 30%;
+  text-indent: 60px;
+  text-shadow: 2px 2px #0C090A;
+  font-weight: bold;
+}
+
+/* line 20, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/content.scss */
+.video_font_2 {
+  font-family: sans-serif;
+  font-size: 48px;
+  color: white;
+  margin-top: 0%;
+  text-indent: 80px;
+  text-shadow: 2px 2px #0C090A;
+}

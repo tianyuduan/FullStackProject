@@ -5,7 +5,7 @@ import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
-var Scroll = require('react-scroll');
+import Scroll from 'react-scroll';
 
 class ContentHome extends React.Component {
   constructor(props) {
