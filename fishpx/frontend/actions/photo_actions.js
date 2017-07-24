@@ -34,7 +34,7 @@ export const fetchPhotos = userid => dispatch => (
 );
 
 export const fetchPhoto = id => dispatch => (
-    APIUtil.fetchPhotos(id).then(
+    APIUtil.fetchPhoto(id).then(
       photo => (dispatch(receivePhoto(photo))
     ), err => (
       dispatch(receiveErrors(err.responseJSON))
@@ -64,3 +64,5 @@ export const updatePhoto = photo => dispatch => (
     dispatch(receiveErrors(err.responseJSON))
   ))
 );
+
+window.fetchPhotos = fetchPhotos;

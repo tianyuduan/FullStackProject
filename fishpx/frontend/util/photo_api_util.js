@@ -1,6 +1,6 @@
 export const fetchPhotos = userid => (
   $.ajax({
-    method: 'POST',
+    method: 'GET',
     url: `/api/photos`,
     data: userid
   })
@@ -8,7 +8,7 @@ export const fetchPhotos = userid => (
 
 export const fetchPhoto = id => (
   $.ajax({
-    method: 'POST',
+    method: 'GET',
     url: `/api/photos/${id}`,
   })
 );

@@ -14,18 +14,12 @@ import HeaderHome from '../header/header.jsx';
 import ContentHome from '../content/content.jsx';
 import PhotosIndex from '../photos/photos_index.jsx';
 import ModalUpload from '../modal_upload/modal_upload.jsx';
+import FooterHome from '../footer/footer.jsx';
+import Logo from '../logo/logo.jsx';
+import ShowMoreButton from '../widgets/show_more_button.jsx';
 
 injectTapEventPlugin();
 
-
-const muiTheme = getMuiTheme({
-  palette: {
-    textColor: cyan500,
-  },
-  appBar: {
-    height: 50,
-  },
-});
 
 // MuiThemeProvider takes the theme as a property and passed it down the hierarchy.
 const Main = () => (
@@ -37,6 +31,7 @@ const Main = () => (
 
 const grid = () => (
   <nav className="image_grid">
+    <Logo></Logo>
     <ModalSessionContainer/>
     <ContentHome/>
 
@@ -46,7 +41,15 @@ const grid = () => (
     </div>
 
     <GridListExampleSimple/>
+
+      <div className = "after-grid-text-container">
+        <div>Get motivated to share your best work</div>
+        <div className='description'>Become part of a community that celebrates incredible photography.</div>
+      </div>
+      <hr></hr>
+      <FooterHome/>
   </nav>
+
 );
 
 const personalGreeting = (currentUser, logout) => (

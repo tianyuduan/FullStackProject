@@ -143,7 +143,11 @@ const IMAGES =
 const GridListExampleSimple = () => (
 
     <div className='image-grid' >
-    <Gallery images={IMAGES} rowHeight={375} margin= {5}/>,
+    <Gallery images={IMAGES}
+      rowHeight={375} margin={5}
+      backdropClosesModal={true}
+      enableLightbox = {false}
+      />,
     </div>
 );
 
