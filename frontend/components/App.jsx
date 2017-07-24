@@ -14,8 +14,6 @@ const App = () => (
     <header>
       <GreetingContainer/>
     </header>
-
-
   </div>
 );
 

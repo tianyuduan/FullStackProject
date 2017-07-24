@@ -4,6 +4,11 @@ import {signup, login, logout} from './util/session_api_util.js';
 import configureStore from './store/store.js';
 import Root from './components/root.jsx';
 
+const CLOUDINARY_URL = 	'https://api.cloudinary.com/v1_1/djubcegxh/upload';
+const CLOUDINARY_UPLOAD_PRESET = 'jgyw65qw';
+let imgPreview = document.getElementById('img-preview');
+let fileUpload = document.getElementById('file-upload');
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -25,3 +30,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ReactDOM.render(<Root store={store} />, root);
 });
+
+if (fileUpload) {
+fileUpload.addEventListener('change', function(event) {
+  let file = event.target.files[0];
+  let formData = new FormData();
+  formData.append('file', file);
+  formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+console.log("hello");
+  window.axios({
+    url: CLOUDINARY_URL,
+    method: 'POST',
+    headers: {
+      'Content-Type' : 'application/x-www-form-urlencoded'
+    },
+    data: formData
+  }).then(function(res) {
+    console.log(res);
+    imgPreview.src = res.data.secure_url;
+  });
+
+});
+}

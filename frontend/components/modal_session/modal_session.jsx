@@ -138,7 +138,7 @@ class ModalSession extends React.Component {
         <div className="login">
         <FlatButton label="Log In"
           labelStyle={{ color: 'white',
-            fontSize: 20,
+            fontSize: 14,
             fontFamily: "sans-serif",
             fontWeight: "bold",
             textShadow: "1px 1px #0C090A"
@@ -153,7 +153,7 @@ class ModalSession extends React.Component {
         <div className="signup">
         <FlatButton label="Sign Up"
           labelStyle={{ color: 'white',
-            fontSize: 20,
+            fontSize: 14,
             fontFamily: "sans-serif",
             textShadow: "1px 1px #0C090A",
           }}
@@ -162,7 +162,6 @@ class ModalSession extends React.Component {
           onTouchTap={this.handleOpen("Signup")}
           className="Signup"
           style={{width: '150px',
-            borderRadius: "10px",
             }}/>
         </div>
         <Dialog
