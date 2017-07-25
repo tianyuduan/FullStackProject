@@ -16,4 +16,54 @@
   margin-bottom: -200px;
   width: 100%;
   background-position: 50% 50%;
+  font-size: 72px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: 2px;
+  color: #323031;
 }
+
+.about {
+  width: 700px;
+  font-size: 24px;
+}
+
+/* Circle */
+
+.hover15  {
+	display: block;
+	background: rgba(255,255,255,.2);
+	border-radius: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+.hover15 :hover{
+	-webkit-animation: circle .75s;
+	animation: circle .75s;
+}
+// @-webkit-keyframes circle {
+// 	0% {
+// 		opacity: 1;
+// 	}
+// 	40% {
+// 		opacity: 1;
+// 	}
+// 	100% {
+// 		width: 200%;
+// 		height: 200%;
+// 		opacity: 0;
+// 	}
+// }
+// @keyframes circle {
+// 	0% {
+// 		opacity: 1;
+// 	}
+// 	40% {
+// 		opacity: 1;
+// 	}
+// 	100% {
+// 		width: 200%;
+// 		height: 200%;
+// 		opacity: 0;
+// 	}
+// }

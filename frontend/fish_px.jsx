@@ -50,7 +50,6 @@ console.log("hello");
     },
     data: formData
   }).then(function(res) {
-    console.log(res);
     imgPreview.src = res.data.secure_url;
   });
 
