@@ -13,7 +13,7 @@ import ModalSessionContainer from '../modal_session/modal_session_container.js';
 import HeaderHome from '../header/header.jsx';
 import ContentHome from '../content/content.jsx';
 import PhotosIndexContainer from '../photos/photos_index_container.js';
-import ModalUpload from '../modal_upload/modal_upload.jsx';
+import ModalUploadContainer from '../modal_upload/modal_upload_container.js';
 import FooterHome from '../footer/footer.jsx';
 import Logo from '../logo/logo.jsx';
 import ShowMoreButton from '../widgets/show_more_button.jsx';
@@ -26,7 +26,8 @@ const Main = () => (
     <h1>
     <HeaderHome></HeaderHome>
     <PhotosIndexContainer/>
-    <ModalUpload/>
+    <ModalUploadContainer/>
+
     </h1>
 );
 

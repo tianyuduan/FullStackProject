@@ -5,6 +5,12 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import ModalUpload from '../modal_upload/modal_upload.jsx';
 
+
+import {GridList, GridTile} from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import Subheader from 'material-ui/Subheader';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+
 class PhotosIndex extends React.Component {
     constructor(props) {
       super(props);
@@ -16,8 +22,11 @@ class PhotosIndex extends React.Component {
       };
     }
 
+
   componentWillReceiveProps() {
-//on update
+// // on update
+//   this.props.fetchPhotos(
+//   this.props.session.currentUser.id);
   }
 
   componentDidMount() {
@@ -26,37 +35,45 @@ class PhotosIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props );
+    const styles = {
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+    },
+    gridList: {
+      width: 500,
+      height: 450,
+      overflowY: 'auto',
+    },
+  };
+
     const { photos, session } = this.props;
+    let imageGrid = photos.map((photo, idx) => (
+      <div key={idx} className="Igrid">
+      <img src={photo.image_url} style={{width: "300px", height: "300px"}}/>
+      </div>
+    ));
 
-      let timer1;
-      let grid;
-      let timer2 = this.props.photos;
-
-      console.log(timer2);
-      if (timer2) {
-        timer1 = timer2;
-        console.log(this.props);
-      }
-      else {
-        return null;
-      }
-      
-      grid = timer1.map((image) => (
-        <div>
-          <img src={image.image_url}></img>
-        </div>
-      ));
-
-      if (this.props) {
-        console.log(this.props);
-      }
-
-    // console.log(grid);
+    // console.log(photos);
     return (
-    <div>
-      {grid}
-    </div>
+      <div style={styles.root}>
+    <GridList
+      cellHeight={180}
+      style={styles.gridList}
+    >
+      <Subheader>User Uploads</Subheader>
+      {photos.map((tile) => (
+        <GridTile
+          key={tile.id}
+          title={tile.title}
+          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+        >
+          <img src={tile.image_url} />
+        </GridTile>
+      ))}
+    </GridList>
+  </div>
   );
 
   }

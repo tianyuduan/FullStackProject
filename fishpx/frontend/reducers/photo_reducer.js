@@ -7,22 +7,24 @@ import {
   RECEIVE_ERRORS
 } from '../actions/photo_actions';
 
-const nullPhoto = Object.freeze({
-    title: "",
-     description: "",
-     user_id: null,
-     photo_id: null,
-     image_url: "",
-     like_ids: [],
-     tag_ids: [],
-     errors: []
+const initialState = Object.freeze({
+  byId: {},
+  errors: []
 });
 
-const photoReducer = (state = nullPhoto, action) => {
+const photoReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_PHOTOS:
-        return merge({}, action.photos);
+      // const allPhotos = merge ({},
+        // {[action.photos.id]: state},
+        // {[action.photos.id]: action.photos.id});
+      // return allPhotos;
+      // let photos;
+      // for (let i = 0; i < action.photos.length; i++) {
+      //  }
+      //  return photos;
+      return merge({}, state, {byId: action.photos});
     case RECEIVE_PHOTO:
     const newPhoto = merge({},
       {[action.photo.id]: state},
@@ -36,7 +38,7 @@ const photoReducer = (state = nullPhoto, action) => {
         return nextState;
     case RECEIVE_ERRORS:
       const errors = action.errors;
-      return merge({}, nullPhoto, {
+      return merge({}, initialState, {
         errors
       });
     default:

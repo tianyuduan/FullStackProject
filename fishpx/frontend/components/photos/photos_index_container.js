@@ -9,6 +9,7 @@ const mapStateToProps = state => {
   return {
     photos: selectUserPhotos(state),
     session: state.session,
+    IsFetching: false,
   };
 };
 
