@@ -1,5 +1,5 @@
 import { values } from 'lodash';
 
 export const selectUserPhotos = ({ photos }) => {
-  return values(photos.byId).reverse();
+  return values(photos.photos).reverse();
 };

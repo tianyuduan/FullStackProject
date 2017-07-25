@@ -8,7 +8,8 @@ from '../../actions/photo_actions.js';
 const mapStateToProps = state => {
 
   return {
-    photos: selectUserPhotos(state)
+    photos: selectUserPhotos(state),
+    session: state.session,
   };
 };
 

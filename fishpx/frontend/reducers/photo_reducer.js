@@ -8,7 +8,7 @@ import {
 } from '../actions/photo_actions';
 
 const initialState = Object.freeze({
-  byId: {},
+  photos: {},
   errors: []
 });
 
@@ -19,19 +19,14 @@ const photoReducer = (state = initialState, action) => {
       // const allPhotos = merge ({},
         // {[action.photos.id]: state},
         // {[action.photos.id]: action.photos.id});
-      // return allPhotos;
-      // let photos;
-      // for (let i = 0; i < action.photos.length; i++) {
-      //  }
-      //  return photos;
-      return merge({}, state, {byId: action.photos});
+      let photosAll =  merge({}, state, {photos: action.photos});
+      return photosAll;
     case RECEIVE_PHOTO:
-    const newPhoto = merge({},
-      {[action.photo.id]: state},
-      {[action.photo.id]: action.photo});
+    let newState = merge({}, state );
+       newState.photos[action.photo.id ] = action.photo;
+       return newState;
         //const newPhoto = {[action.photos.id]: action.photos};
         // return merge({}, state, newPhoto);
-        return newPhoto;
     case REMOVE_PHOTO:
       let nextState = merge({}, state);
       delete nextState[action.photo.id];

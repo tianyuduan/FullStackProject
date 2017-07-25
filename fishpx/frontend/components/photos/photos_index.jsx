@@ -14,19 +14,20 @@ import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 class PhotosIndex extends React.Component {
     constructor(props) {
       super(props);
+
       this.state = {
        title: "",
        description: "",
        image_url: "",
        tags: "",
+       photosLists: props.photos
       };
     }
 
-
-  componentWillReceiveProps() {
-// // on update
-//   this.props.fetchPhotos(
-//   this.props.session.currentUser.id);
+  componentWillReceiveProps(nextProps) {
+// on update
+  this.setState({photosLists: nextProps.photos});
+  console.log(nextProps);
   }
 
   componentDidMount() {
@@ -49,13 +50,13 @@ class PhotosIndex extends React.Component {
   };
 
     const { photos, session } = this.props;
-    let imageGrid = photos.map((photo, idx) => (
+    let imageGrid = this.state.photosLists.map((photo, idx) => (
       <div key={idx} className="Igrid">
       <img src={photo.image_url} style={{width: "300px", height: "300px"}}/>
       </div>
     ));
 
-    // console.log(photos);
+
     return (
       <div style={styles.root}>
     <GridList
@@ -63,7 +64,7 @@ class PhotosIndex extends React.Component {
       style={styles.gridList}
     >
       <Subheader>User Uploads</Subheader>
-      {photos.map((tile) => (
+      {this.state.photosLists.map((tile) => (
         <GridTile
           key={tile.id}
           title={tile.title}
