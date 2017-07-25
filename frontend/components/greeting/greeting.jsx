@@ -17,14 +17,15 @@ import ModalUploadContainer from '../modal_upload/modal_upload_container.js';
 import FooterHome from '../footer/footer.jsx';
 import Logo from '../logo/logo.jsx';
 import ShowMoreButton from '../widgets/show_more_button.jsx';
+import tabView from '../widgets/tabs.jsx';
 
 injectTapEventPlugin();
 
 
-// MuiThemeProvider takes the theme as a property and passed it down the hierarchy.
 const Main = () => (
     <h1>
     <HeaderHome></HeaderHome>
+      <tabView/>
     <PhotosIndexContainer/>
     <ModalUploadContainer/>
 
