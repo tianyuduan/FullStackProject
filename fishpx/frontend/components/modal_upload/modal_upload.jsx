@@ -128,9 +128,23 @@ class ModalUpload extends React.Component {
 
     return (
 
-
-      <div>
-        <RaisedButton label="Upload" onTouchTap={this.handleOpen} />
+      <div className="uploadWrapper">
+        <FlatButton label="Upload"
+          className="upload"
+          onTouchTap={this.handleOpen}
+          label="Upload"
+            labelStyle={{ color: 'white',
+              fontSize: 14,
+              fontFamily: "sans-serif",
+              fontWeight: "bold",
+              textShadow: "1px 1px #0C090A"
+            }}
+            disabled={false}
+            className="upload"
+            style={{width: '150px',
+              borderRadius: "10px"
+              }}
+          />
           <Dialog
             title="Image Upload Here"
             actions={actions}
