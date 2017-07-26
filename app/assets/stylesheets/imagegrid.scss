@@ -17,9 +17,15 @@
   width: 26.5vw;
 }
 }
-.imageGridUser {
 
+
+.imageGridUser {
+  :hover {
+
+      opacity: .8
+  }
 }
+
 //
 .my-gallery-class {
 padding-top: 20px;

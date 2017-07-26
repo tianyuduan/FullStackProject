@@ -43,8 +43,13 @@ class PhotosIndex extends React.Component {
       this.props.session.currentUser.id);
   }
 
-  handleOpen() {
-    this.setState({open: true});
+  handleOpen(url, description, title) {
+    console.log(url + description + title);
+    this.setState({open: true,
+       title: title,
+       description: description,
+       image_url:url
+     });
   }
 
   handleClose() {
@@ -53,6 +58,12 @@ class PhotosIndex extends React.Component {
 
 
   render() {
+
+    const customContentStyle = {
+    // height: 'auto',
+    width: '65%',
+    maxWidth: 'none',
+  };
 
     let masonryOptions = {
         transitionDuration: 0,
@@ -71,20 +82,29 @@ class PhotosIndex extends React.Component {
       />,
       ];
 
+
+      const modal = () => (
+
+        <Dialog
+          title={this.state.title}
+          actions={actions}
+          modal={true}
+          open={this.state.open}
+          style={{
+          }}
+          contentStyle={customContentStyle}
+          >
+          <img src={this.state.image_url}  />
+        </Dialog>
+
+      );
+
     let elements = this.state.photosLists.map((tile) => (
       <li className="imageGridUser">
           <img src={tile.image_url}
-            onClick={this.handleOpen}
+            onClick={this.handleOpen.bind(this, tile.image_url, tile.description, tile.title)}
             key={tile.image_url}
             ></img>
-          <Dialog
-            title={tile.title}
-            actions={actions}
-            modal={true}
-            open={this.state.open}
-            >
-            <img src={tile.image_url}/>
-          </Dialog>
         </li>
     )
   );
@@ -113,6 +133,7 @@ class PhotosIndex extends React.Component {
           updateOnEachImageLoad={false}
       >
           {elements}
+          {modal()}
       </Masonry>
   );
 
