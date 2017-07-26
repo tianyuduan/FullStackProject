@@ -6,6 +6,7 @@
     "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "bricks.js": "^1.8.0",
     "hover.css": "^2.2.0",
     "masonry-layout": "^4.2.0",
     "material-ui": "^0.18.6",

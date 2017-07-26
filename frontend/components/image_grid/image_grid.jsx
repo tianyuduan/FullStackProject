@@ -146,7 +146,7 @@ const GridListExampleSimple = () => (
     <Gallery images={IMAGES}
       rowHeight={375} margin={5}
       backdropClosesModal={true}
-      enableLightbox = {false}
+      enableLightbox = {true}
       />,
     </div>
 );

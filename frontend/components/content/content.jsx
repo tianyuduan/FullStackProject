@@ -14,7 +14,7 @@ class ContentHome extends React.Component {
   }
 
   handleScroll() {
-    var scroll = Scroll.animateScroll;
+    let scroll = Scroll.animateScroll;
     scroll.scrollTo(window.innerHeight + 100, {
       duration: 1000,
       delay: 100,

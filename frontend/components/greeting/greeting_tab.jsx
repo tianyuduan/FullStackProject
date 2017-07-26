@@ -2,6 +2,8 @@ import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 
+import PhotosIndexContainer from '../photos/photos_index_container.js';
+
 const styles = {
   headline: {
     fontSize: 24,
@@ -10,24 +12,26 @@ const styles = {
     fontWeight: 400,
   },
   slide: {
-    padding: 10,
   },
 };
 
-class tabView extends React.Component {
+
+class TabsView extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       slideIndex: 0,
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(value) {
-  return this.setState({
+    this.setState({
       slideIndex: value,
     });
   }
+
 
 
   render() {
@@ -37,15 +41,17 @@ class tabView extends React.Component {
           onChange={this.handleChange}
           value={this.state.slideIndex}
         >
-          <Tab label="Tab One" value={0} />
-          <Tab label="Tab Two" value={1} />
-          <Tab label="Tab Three" value={2} />
+          <Tab label="Popular" value={0} />
+          <Tab label="Seascape" value={1} />
+          <Tab label="WildLife" value={2} />
+          <Tab label="People" value={3} />
+          <Tab label="User Uploads" value={4} />
         </Tabs>
         <SwipeableViews
           index={this.state.slideIndex}
           onChangeIndex={this.handleChange}
         >
-          <div>
+          <div className="tabsCssss">
             <h2 style={styles.headline}>Tabs with slide effect</h2>
             Swipe to see the next slide.<br />
           </div>
@@ -55,10 +61,16 @@ class tabView extends React.Component {
           <div style={styles.slide}>
             slide n°3
           </div>
+          <div style={styles.slide}>
+            slide n°4
+          </div>
+          <div style={styles.slide}>
+          <PhotosIndexContainer/>
+          </div>
         </SwipeableViews>
       </div>
     );
   }
 }
 
-export default tabView;
+export default TabsView;
