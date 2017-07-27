@@ -10,13 +10,12 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
 
-
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
-class PhotosIndex extends React.Component {
+class SeaScape extends React.Component {
     constructor(props) {
       super(props);
 
@@ -66,7 +65,6 @@ class PhotosIndex extends React.Component {
     let masonryOptions = {
         transitionDuration: 0,
         gutter: 20,
-        // columnWidth: 1000,
         fitWidth: true
     };
 
@@ -107,20 +105,6 @@ class PhotosIndex extends React.Component {
     )
   );
 
- //  let willRender = () => (
- // (this.state.photosLists) ?
- // <Masonry
- //     className={'my-gallery-class'}
- //     elementType={'ul'}
- //     options={masonryOptions}
- //     disableImagesLoaded={false}
- //     updateOnEachImageLoad={false}
- // >
- //     {elements}
- // </Masonry>
- //   : <CircularProgressSimple/>
- //  );
-
 
     return (
       <Masonry
@@ -138,4 +122,4 @@ class PhotosIndex extends React.Component {
   }
 }
 
-export default PhotosIndex;
+export default SeaScape;

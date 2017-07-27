@@ -18,7 +18,7 @@ class Api::PhotosController < ApplicationController
     if @photo.save
       render 'api/photos/show'
     else
-      ender json: @photo.errors.full_messages, status: 422
+      render json: @photo.errors.full_messages, status: 422
     end
   end
 
@@ -47,7 +47,8 @@ class Api::PhotosController < ApplicationController
     :title,
     :description,
     :image_url,
-    :user_id
+    :user_id,
+    tag_ids: []
     )
   end
 end
