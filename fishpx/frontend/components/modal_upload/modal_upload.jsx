@@ -6,6 +6,8 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import AutoCompleteData from './auto_complete_tags.jsx';
+
 import DropZone from 'react-dropzone';
 import superAgent from 'superagent';
 
@@ -18,6 +20,7 @@ class ModalUpload extends React.Component {
       image_url: "",
       title: "",
       description: "",
+      tag_ids: [],
       open: false,
       user_id: this.props.session.currentUser.id
     };
@@ -25,6 +28,7 @@ class ModalUpload extends React.Component {
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.uploadFile = this.uploadFile.bind(this);
+    this.handleNewRequest = this.handleNewRequest.bind(this);
   }
 
   handleOpen() {
@@ -38,13 +42,6 @@ class ModalUpload extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    // let data = {
-    //   title:
-    //   description:
-    //   user_id:
-    //   image_url:
-    // };
-
     this.setState(
       { title: '',
         description: '',
@@ -53,6 +50,17 @@ class ModalUpload extends React.Component {
       });
 
     this.props.createPhoto(this.state);
+  }
+
+  handleNewRequest(request, index) {
+    let arr = this.state.tag_ids;
+    arr.push(index + 13);
+
+    this.setState (
+      {
+        tag_ids: arr
+      }
+    );
 
   }
 
@@ -166,6 +174,22 @@ class ModalUpload extends React.Component {
            onChange={this.update('title')}
            className="title-input"
            hintText="Type Your Title! "
+           />
+         <label className="Description">Description:</label>
+         <TextField id={this.state.description} className="image_description_text_field" type="text"
+           value={this.state.description}
+           onChange={this.update('description')}
+           className="description-input"
+           hintText="Type Your Description! "
+           />
+         <br></br>
+         <label className="Tags">Tags:</label>
+         <AutoCompleteData id={this.state.tag_names} className="image_title_text_field" type="text"
+           value={this.state.tag_names}
+           onChange={this.update('tag_ids')}
+           className="tag-input"
+           hintText="Type Your Tag! "
+           onNewRequest={this.handleNewRequest}
            />
           </Dialog>
       </div>

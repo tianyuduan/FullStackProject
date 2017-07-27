@@ -41,7 +41,6 @@ fileUpload.addEventListener('change', function(event) {
   formData.append('file', file);
   formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
 
-console.log("hello");
   window.axios({
     url: CLOUDINARY_URL,
     method: 'POST',
