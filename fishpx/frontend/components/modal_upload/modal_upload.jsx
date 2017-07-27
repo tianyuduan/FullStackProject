@@ -53,12 +53,13 @@ class ModalUpload extends React.Component {
   }
 
   handleNewRequest(request, index) {
-    let arr = this.state.tag_ids;
-    arr.push(index + 13);
+
+
+    // arr.push(request.valueKey);
 
     this.setState (
       {
-        tag_ids: arr
+        tag_ids: [...this.state.tag_ids, request.valueKey]
       }
     );
 
@@ -84,7 +85,7 @@ class ModalUpload extends React.Component {
   }
 
   componentDidMount() {
-
+    this.props.fetchTags();
   }
 
 
@@ -108,7 +109,6 @@ class ModalUpload extends React.Component {
   }
 
   render() {
-
 
     const innerText = this.state.image_url === '' ? (
       <h1>Drop here</h1>
@@ -190,6 +190,7 @@ class ModalUpload extends React.Component {
            className="tag-input"
            hintText="Type Your Tag! "
            onNewRequest={this.handleNewRequest}
+           tagData={this.props.tagData}
            />
           </Dialog>
       </div>

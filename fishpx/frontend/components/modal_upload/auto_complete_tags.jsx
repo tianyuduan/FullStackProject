@@ -3,13 +3,6 @@ import AutoComplete from 'material-ui/AutoComplete';
 import MenuItem from 'material-ui/MenuItem';
 
 
-const dataSource3 = [
-  {textKey: 'Seascape', valueKey: 11},
-  {textKey: 'Fish', valueKey: 12},
-  {textKey: 'People', valueKey: 13},
-  {textKey: 'Others', valueKey: 14},
-];
-
 const dataSourceConfig = {
   text: 'textKey',
   value: 'valueKey',
@@ -19,14 +12,14 @@ const dataSourceConfig = {
  * The second example uses an array of values as its `dataSource`, and updates on focus.
  * Both examples have filtering disabled.
  */
-const AutoCompleteData = ({onNewRequest}) => {
+const AutoCompleteData = ({onNewRequest, tagData}) => {
 
   return (
   <div>
     <AutoComplete
       hintText="Type your Tag!"
       filter={AutoComplete.noFilter}
-      dataSource={dataSource3}
+      dataSource={tagData}
       dataSourceConfig={dataSourceConfig}
       onNewRequest={onNewRequest}
     /><br />

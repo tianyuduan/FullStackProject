@@ -1,8 +1,10 @@
 class Comment < ApplicationRecord
 
+  include Votable
+  
   validates :body, :photo, presence: true
 
-  after_intialize :ensure_photo_id!
+  after_initialize :ensure_photo_id!
 
   belongs_to :photo, inverse_of: :comments
 

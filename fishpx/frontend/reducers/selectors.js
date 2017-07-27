@@ -7,8 +7,15 @@ export const selectUserPhotos = ({ photos }) => {
    return photoGallery;
 };
 
+
+export const selectTagPhotos = ({ photos}, tagId) => {
+photoGallery = values(photos.photos).reverse();
+return filter(photoGallery, (photo) => (
+  photo.tag_ids[0] === tagId
+));
+};
+
 export const selectSeascapePhotos = ({ photos }) => {
-  console.log(photoGallery);
   photoGallery = values(photos.photos).reverse();
   return filter(photoGallery, (photo) => (
     photo.tag_ids[0] === 13

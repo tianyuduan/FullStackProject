@@ -361,7 +361,7 @@ tag_id: t3.id
 
 m28 = Photo.create!(
     title: "I like turtles!",
-    image_url: "https://cloudinary.com/console/media_library#/dialog/image/upload/tanguy-sauvin-3121-min_umi4yu",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501131083/tanguy-sauvin-3121-min_umi4yu.jpg",
     description: "So Breathtaking and beautiful",
     user_id: master.id,
 )
@@ -564,8 +564,8 @@ tag_id: t2.id
 )
 
 m45 = Photo.create!(
-    title: "two fisherman",
-    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501132091/przemyslaw-sakrajda-206998-min_z4kl0s.jpg",
+    title: "rise and shine!",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501132918/anders-wideskott-229372-min_yxdcut.jpg",
     description: "So Breathtaking and beautiful",
     user_id: master.id,
 )
