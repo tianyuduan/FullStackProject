@@ -13,7 +13,10 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Photo
 
+  has_many :comments, inverse_of: :author
+  has_many :user_votes, inverse_of: :user
 
+  
 	def password=(password)
 		self.password_digest = BCrypt::Password.create(password)
 		@password = password

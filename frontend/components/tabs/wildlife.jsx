@@ -40,6 +40,8 @@ class Wildlife extends React.Component {
   componentDidMount() {
     this.props.fetchPhotos(
       this.props.session.currentUser.id);
+
+      // this.props.fetchTags();
   }
 
   handleOpen(url, description, title) {
@@ -56,6 +58,8 @@ class Wildlife extends React.Component {
 
 
   render() {
+    let { tagData } =  this.props;
+    console.log(tagData);
 
     const customContentStyle = {
     width: '75%',

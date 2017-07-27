@@ -1,15 +1,24 @@
 import { connect } from 'react-redux';
 import People from './people.jsx';
 import { selectUserPhotos } from '../../reducers/selectors.js';
-import { selectPeoplePhotos } from '../../reducers/selectors.js';
+import { selectTagPhotos } from '../../reducers/selectors.js';
 
 import { fetchPhotos, fetchPhoto, updatePhoto, deletePhoto, createPhoto }
 from '../../actions/photo_actions.js';
 
+import { find } from 'lodash';
+
+const tagHelper = ({tags}) => {
+  let obj =  find(tags, tag => (tag.tag_name === "People"));
+  return obj.id;
+};
+
+
 const mapStateToProps = state => {
   return {
-    photos: selectPeoplePhotos(state),
+    photos: selectTagPhotos(state, tagHelper(state)),
     session: state.session,
+    tags: state.tags,
   };
 };
 

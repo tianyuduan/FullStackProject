@@ -19,6 +19,9 @@ class Photo < ApplicationRecord
 
   has_many :taggings, dependent: :destroy, inverse_of: :photo
   has_many :tags, through: :taggings
+
+  has_many :comments, inverse_of: :photo
+
   #photos tags
   # tags_id
   #tags_id =

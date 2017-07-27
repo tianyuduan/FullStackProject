@@ -1,5 +1,7 @@
 class Comment < ApplicationRecord
 
+  include Votable
+  
   validates :body, :photo, presence: true
 
   after_initialize :ensure_photo_id!
