@@ -1,4 +1,22 @@
 import React from 'react';
+import Avatar from 'material-ui/Avatar';
+import FileFolder from 'material-ui/svg-icons/file/folder';
+import FontIcon from 'material-ui/FontIcon';
+import List from 'material-ui/List/List';
+import ListItem from 'material-ui/List/ListItem';
+import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
+import ModalUploadContainer from '../modal_upload/modal_upload_container.js';
+
+import SettingsIcon from 'material-ui/svg-icons/action/settings.js';
+import DropDownMenuOpen from './drop_down.jsx';
+import logOut from '../greeting/greeting.jsx';
+import IconMenu from 'material-ui/IconMenu';
+import ActionSettings from 'material-ui/svg-icons/action/settings';
+import IconButton from 'material-ui/IconButton';
+
+import FileUpload from 'material-ui/svg-icons/file/file-upload';
+
 import { Link, withRouter } from 'react-router-dom';
 import {cyan500, transparent, grey50} from 'material-ui/styles/colors';
 import TextField from 'material-ui/TextField';
@@ -6,14 +24,25 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import AutoCompleteData from './auto_complete_tags.jsx';
+import AutoCompleteData from '../modal_upload/auto_complete_tags.jsx';
 
 import DropZone from 'react-dropzone';
 import superAgent from 'superagent';
 
-import FileUpload from 'material-ui/svg-icons/file/file-upload';
 
-class ModalUpload extends React.Component {
+
+import {
+  blue300,
+  indigo900,
+  orange200,
+  deepOrange300,
+  pink400,
+  purple500,
+} from 'material-ui/styles/colors';
+
+const style = {margin: 5};
+
+export default class SettingsDrop extends React.Component {
 
   constructor(props) {
     super(props);
@@ -24,13 +53,25 @@ class ModalUpload extends React.Component {
       description: "",
       tag_ids: [],
       open: false,
-      user_id: this.props.session.currentUser.id
+      user_id: this.props.session.currentUser.id,
+      value: 2
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.uploadFile = this.uploadFile.bind(this);
     this.handleNewRequest = this.handleNewRequest.bind(this);
+  }
+
+  handleChange(event, index, value) {
+    return this.setState({value});
+  }
+
+  handleLogout() {
+    this.props.logout();
   }
 
   handleOpen() {
@@ -44,15 +85,16 @@ class ModalUpload extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    this.props.createPhoto(this.state);
-
     this.setState(
       { title: '',
         description: '',
         image_url: '',
         id: this.state.id + 1,
       });
+
+    this.props.createPhoto(this.state);
   }
+
 
   handleNewRequest(request, index) {
     this.setState (
@@ -60,7 +102,6 @@ class ModalUpload extends React.Component {
         tag_ids: [...this.state.tag_ids, request.valueKey]
       }
     );
-
   }
 
   uploadFile(image) {
@@ -87,8 +128,6 @@ class ModalUpload extends React.Component {
   }
 
 
-
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -108,12 +147,15 @@ class ModalUpload extends React.Component {
     );
   }
 
+
+
+
   render() {
     const changeColor = 'white';
-    const hoverColor = '#00FFFF';
+    const hoverColor = '#00BCD4';
 
     const innerText = this.state.image_url === '' ? (
-      <h1 className="clickheretoUpload">Click here to upload!</h1>
+      <h1>Drop here</h1>
     ) : (
       <img src={this.state.image_url}></img>
     );
@@ -137,67 +179,20 @@ class ModalUpload extends React.Component {
     const {image_url} = this.state;
 
     return (
+      <IconMenu className="settingsButton0"
+        iconButtonElement={
+          <IconButton className="settingsButton">
+            <ActionSettings className="settingsButton2"
+              color={changeColor}
+              hoverColor={hoverColor}
+               />
+          </IconButton>
+        }
+        useLayerForClickAway={true}
+        >
+        <MenuItem primaryText="Log Out" onTouchTap={this.handleLogout}></MenuItem>
+            </IconMenu>
 
-      <div className="uploadWrapper">
-        <FileUpload label="Upload"
-          className="upload"
-          onTouchTap={this.handleOpen}
-          color={changeColor}
-          hoverColor={hoverColor}
-          label="Upload"
-           style={{width: "35px", height: "35px"}}
-          />
-          <Dialog
-            className="dialogPhotoUpload"
-            title="Select a Photo "
-            actions={actions}
-            modal={true}
-            open={this.state.open}
-          >
-          <div className="dropzoneWrapper">
-          <DropZone
-            accept="image/*"
-            multiple= {false}
-            onDrop={this.uploadFile}
-            >
-            {innerText}
-
-          </DropZone>
-          </div>
-
-          <div className="inputWrapper">
-          <label className="Title">Title:</label>
-         <TextField id={this.state.title} className="image_title_text_field" type="text"
-           value={this.state.title}
-           onChange={this.update('title')}
-           className="title-input"
-           hintText="   Please type your title "
-           />
-         <br></br>
-         <label className="Description">Description:</label>
-         <TextField id={this.state.description} className="image_description_text_field" type="text"
-           value={this.state.description}
-           onChange={this.update('description')}
-           className="description-input"
-           hintText="   Please type your description"
-           />
-         <br></br>
-         <div className="categoryWrapper">
-         <label className="Category">Category:</label>
-           <AutoCompleteData id={this.state.tag_names}
-            className="image_title_text_field" type="text"
-           value={this.state.tag_names}
-           onChange={this.update('tag_ids')}
-           className="tag-input"
-           onNewRequest={this.handleNewRequest}
-           tagData={this.props.tagData}
-           />
-         </div>
-         </div>
-          </Dialog>
-      </div>
-    );
+  );
   }
 }
-
-export default withRouter(ModalUpload);

@@ -44,8 +44,6 @@ export const fetchPhoto = id => dispatch => (
 export const createPhoto = photo => dispatch => (
   APIUtil.createPhoto(photo).then(
     photo => (dispatch(receivePhoto(photo))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
   ))
 );
 

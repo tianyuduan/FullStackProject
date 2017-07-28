@@ -1,24 +1,58 @@
-# README
+# FishPx
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[FishPx live][heroku]
 
-Things you may want to cover:
+[heroku]: https://fishpx.herokuapp.com/
 
-* Ruby version
+FishPx is a full-stack web application inspired by 500 px.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
-* System dependencies
+## Features & Implementation
 
-* Configuration
+### Home Splash Page
 
-* Database creation
+Implements a video of the wonders of the underwater sea world. The Show More Button implements an automatic scroll down that leads the user to a sneak peak of the content within.
 
-* Database initialization
+![Splash Page](http://res.cloudinary.com/djubcegxh/image/upload/v1501281117/Screen_Shot_2017-07-28_at_3.31.10_PM_smvvdb.png)
 
-* How to run the test suite
+### User Authentication
 
-* Services (job queues, cache servers, search engines, etc.)
+Users can sign up/log in. The Authentication Forms are implemented using Google's Material-UI React-Modals. A demo account is available to explore the site's images and features. A User will have
+access to the Content Page, navigate through the categories of photos and sign out.
 
-* Deployment instructions
+![image of Create/Edit User](http://res.cloudinary.com/djubcegxh/image/upload/v1501281227/Screen_Shot_2017-07-28_at_3.33.09_PM_i9ywdw.png)
 
-* ...
+### Upload and Rendering images
+Users can upload images from the content page. The image upload mechanic is implemented with a combination of Cloudinary API, react Dropzone, superAgent and Material-UI. At upload, a dropdown
+menu of the categories will be listed where the user can choose which tag to upload the images under.
+Upon upload, that image will be rendered under that specific category.
+
+![image of Upload](http://res.cloudinary.com/djubcegxh/image/upload/v1501282064/Screen_Shot_2017-07-28_at_3.47.11_PM_m3jmq5.png)
+
+### Categories/Tags
+
+The content Page will consist of 6 categories where the user can choose from. The sliding-tabs is a feature implemented with Material-UI. User can browse through all the categories of images.
+
+![gif of categories](https://user-images.githubusercontent.com/26663031/28739268-70ff4012-73ae-11e7-89d6-58cd55fa5223.gif)
+
+
+### Masonry Image Grid
+All the photos in the content page are implemented with react-Masonry, a javascript grid library. Upon image click, it will render a full-size image modal.
+
+![gif of imageGrid](http://res.cloudinary.com/djubcegxh/video/upload/v1501282493/bed03089193336114b658ee6ecb9f928_2_ioveu5.mp4)
+
+
+
+## Future Improvements
+
+### Infinite Scroll
+  Due to the nature of high-res, detail-heavy websites, having Infinite Scroll will optimize page load, which will allow users to scroll through many images in content page more efficiently
+
+### likes and comments
+User should be able to like an image, comment on an image. Once like and comments have been implemented, an Popular Category could be implemented so User can browse through heavily liked images.
+
+
+### User Profile
+User should be able to edit their profile, upload a cover photo, be able to view photos that belong to them. Users should also be able to view each others profiles as well.
+
+### Loading Screen
+  Implement a loading screen for when the browser is busy rendering all the images fetched from Cloudinary.

@@ -95,8 +95,14 @@ class People extends React.Component {
 
       );
 
+      function toTitleCase(str)
+      {
+      return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+      }
+
     let elements = this.state.photosLists.map((tile) => (
       <li className="imageGridUser">
+        <h1 className="imageGridTitle">{toTitleCase(tile.title)}</h1>
           <img src={tile.image_url}
             onClick={this.handleOpen.bind(this, tile.image_url, tile.description, tile.title)}
             key={tile.image_url}

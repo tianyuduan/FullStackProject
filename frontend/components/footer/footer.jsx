@@ -21,13 +21,13 @@ const FooterHome = () => (
   based on discovering their own passion for taking photography, improving their skills, and
   above all having fun!
         </h1>
+      </div>
 
       <div className='hover15'>
         <a className="hvr-grow" href="https://github.com/tianyuduan">Github</a>
         <h1 className="hvr-grow">Linkedin</h1>
         <h1>Contact</h1>
       </div>
-        </div>
   </div>
 );
 

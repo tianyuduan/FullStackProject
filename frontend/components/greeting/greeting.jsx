@@ -21,14 +21,15 @@ import TabsExampleSimple from './greeting_tab.jsx';
 import CircularProgressSimple from '../widgets/loading.jsx';
 
 
-import AvatarCurrentUser from '../widgets/avatar.jsx';
+import SettingsDropContainer from '../widgets/settings_drop_container.js';
+import SettingsIcon from 'material-ui/svg-icons/action/settings.js';
 injectTapEventPlugin();
 
 
 const Main = () => (
     <h1>
       <Logo></Logo>
-      <AvatarCurrentUser></AvatarCurrentUser>
+      <SettingsDropContainer/>
       <ModalUploadContainer/>
       <HeaderHome></HeaderHome>
       <div className="tabsCss">
@@ -43,19 +44,26 @@ const grid = () => (
     <Logo></Logo>
     <tabView/>
     <ModalSessionContainer/>
-    <ContentHome/>
+    <ContentHome></ContentHome>
 
     <div className = "after-header-text-container">
       <div>The Top Photos Chosen By You</div>
-      <div className='description'>Become part of a community that celebrates incredible photography.</div>
+      <div className='description1'>Become part of a community that celebrates incredible photography.</div>
     </div>
 
+    <div className='MainContent'>
+
+    <div>
     <GridListExampleSimple/>
+    </div>
 
       <div className = "after-grid-text-container">
         <div>Get motivated to share your best work</div>
         <div className='description'>Become part of a community that celebrates incredible photography.</div>
       </div>
+
+    </div>
+
       <hr></hr>
       <FooterHome/>
   </nav>
@@ -64,24 +72,7 @@ const grid = () => (
 
 export const personalGreeting = (currentUser, logout) => (
 	<hgroup className="header-group">
-    <h2 className="header-name">Hi, {currentUser.username}!</h2>
-    <div className='logout-wrap'>
-    <FlatButton label="Log Out"
-      className="logout-button"
-      onClick={logout}
-      labelStyle={{ color: 'white',
-        fontSize: 16,
-        fontFamily: "sans-serif",
-        fontWeight: "bold",
-        textShadow: "1px 1px #0C090A"
-      }}
-      disabled={false}
-      className="upload"
-      style={{width: '150px',
-        borderRadius: "10px"
-      }}
-      />
-    </div>
+    <h2 className="header-name"></h2>
     <Main />
 	</hgroup>
 );

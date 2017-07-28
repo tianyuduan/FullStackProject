@@ -5,6 +5,7 @@ import TextField from 'material-ui/TextField';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import Scroll from 'react-scroll';
 
 class ModalSession extends React.Component {
 
@@ -53,12 +54,15 @@ class ModalSession extends React.Component {
     const user = {username: username, password: password};
       this.props.signup({user});
   }
-  //
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.loggedIn) {
-  //     this.props.history.push('/');
-  //   }
-  // }
+
+  handleScroll() {
+    let scroll = Scroll.animateScroll;
+    scroll.scrollTo(window.innerHeight + 100, {
+      duration: 1000,
+      delay: 100,
+      smooth: true
+    });
+  }
 
   update(field) {
     return e => this.setState({
@@ -99,6 +103,7 @@ class ModalSession extends React.Component {
         primary={true}
         disabled={false}
         onClick = {this.handleSubmitLogin}
+
         onTouchTap={this.renderErrors ? this.renderErrors : this.handleClose}
       />,
       <FlatButton
@@ -164,13 +169,13 @@ class ModalSession extends React.Component {
           style={{width: '150px',
             }}/>
         </div>
-        <Dialog
+        <div className="dialogWrap"> <Dialog
           title="Welcome to FishPx"
           actions={ this.state.formType === "Login" ? actions : actions2}
           modal={true}
           open={this.state.open}
         >
-          Please input your user credentials
+
               {this.renderErrors()}
 
         <div className="login-form">
@@ -181,7 +186,7 @@ class ModalSession extends React.Component {
             value={this.state.username}
             onChange={this.update('username')}
             className="login-input"
-            hintText="  John Doe "
+            hintText="John Doe "
             />
           <br/>
           <label className="passwordLabel">Password:
@@ -193,6 +198,7 @@ class ModalSession extends React.Component {
             />
           </div>
         </Dialog>
+        </div>
       </div>
     );
   }
