@@ -8,7 +8,7 @@ FishPx is a full-stack web application inspired by 500 px.  It utilizes Ruby on 
 
 ## Features & Implementation
 
-###Home Splash Page
+### Home Splash Page
 
 Implements a video of the wonders of the underwater sea world. The Show More Button implements an automatic scroll down that leads the user to a sneak peak of the content within.
 
@@ -26,12 +26,21 @@ Users can upload images from the content page. The image upload mechanic is impl
 menu of the categories will be listed where the user can choose which tag to upload the images under.
 Upon upload, that image will be rendered under that specific category.
 
+![image of Upload](http://res.cloudinary.com/djubcegxh/image/upload/v1501282064/Screen_Shot_2017-07-28_at_3.47.11_PM_m3jmq5.png)
+
 ### Categories/Tags
 
 The content Page will consist of 6 categories where the user can choose from. The sliding-tabs is a feature implemented with Material-UI. User can browse through all the categories of images.
 
+![gif of Categories](http://res.cloudinary.com/djubcegxh/video/upload/v1501282286/f6cfddc04f2650ff52abb09106f4de28_2_x4fuqk.mp4)
+
+
 ### Masonry Image Grid
 All the photos in the content page are implemented with react-Masonry, a javascript grid library. Upon image click, it will render a full-size image modal.
+
+![gif of Categories](http://res.cloudinary.com/djubcegxh/video/upload/v1501282493/bed03089193336114b658ee6ecb9f928_2_ioveu5.mp4)
+
+
 
 ## Future Improvements
 
