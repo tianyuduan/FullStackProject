@@ -755,3 +755,63 @@ ta60 = Tagging.create!(
 photo_id: m60.id,
 tag_id: t4.id
 )
+
+m61 = Photo.create!(
+    title: "Looking at the ocean",
+    image_url: "https://cloudinary.com/console/media_library#/dialog/image/upload/warren-wong-311524-min_yp5req",
+    description: "Im so cool",
+    user_id: master.id,
+)
+
+ta61 = Tagging.create!(
+photo_id: m61.id,
+tag_id: t2.id
+)
+
+m62 = Photo.create!(
+    title: "Shooting Star",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501280370/juskteez-vu-1041-min_tx2oeo.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta62 = Tagging.create!(
+photo_id: m62.id,
+tag_id: t1.id
+)
+
+m63 = Photo.create!(
+    title: "This is not a fish",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501280370/johannes-andersson-129501-min_pwdy2f.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta63 = Tagging.create!(
+photo_id: m63.id,
+tag_id: t4.id
+)
+
+m64 = Photo.create!(
+    title: "Ruh oh",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501280370/hunter-bryant-110214-min_soyhwx.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta64 = Tagging.create!(
+photo_id: m64.id,
+tag_id: t2.id
+)
+
+m65 = Photo.create!(
+    title: "Sunbathing!",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501280370/nicola-anderson-4773-min_cgusps.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta65 = Tagging.create!(
+photo_id: m65.id,
+tag_id: t3.id
+)
