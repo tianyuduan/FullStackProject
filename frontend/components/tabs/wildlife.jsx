@@ -59,7 +59,6 @@ class Wildlife extends React.Component {
 
   render() {
     let { tagData } =  this.props;
-    console.log(tagData);
 
     const customContentStyle = {
     width: '75%',

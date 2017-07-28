@@ -47,7 +47,7 @@ All the photos in the content page are implemented with react-Masonry, a javascr
 ### Infinite Scroll
   Due to the nature of high-res, detail-heavy websites, having Infinite Scroll will optimize page load, which will allow users to scroll through many images in content page more efficiently
 
-### likes and comments
+### Likes and Comments
 User should be able to like an image, comment on an image. Once like and comments have been implemented, an Popular Category could be implemented so User can browse through heavily liked images.
 
 
