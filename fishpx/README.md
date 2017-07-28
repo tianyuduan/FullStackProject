@@ -32,13 +32,13 @@ Upon upload, that image will be rendered under that specific category.
 
 The content Page will consist of 6 categories where the user can choose from. The sliding-tabs is a feature implemented with Material-UI. User can browse through all the categories of images.
 
-![gif of Categories](http://res.cloudinary.com/djubcegxh/video/upload/v1501282286/f6cfddc04f2650ff52abb09106f4de28_2_x4fuqk.mp4)
+![gif of categories](https://user-images.githubusercontent.com/26663031/28739268-70ff4012-73ae-11e7-89d6-58cd55fa5223.gif)
 
 
 ### Masonry Image Grid
 All the photos in the content page are implemented with react-Masonry, a javascript grid library. Upon image click, it will render a full-size image modal.
 
-![gif of Categories](http://res.cloudinary.com/djubcegxh/video/upload/v1501282493/bed03089193336114b658ee6ecb9f928_2_ioveu5.mp4)
+![gif of imageGrid](https://user-images.githubusercontent.com/26663031/28739323-ed02f212-73ae-11e7-9e33-8dfa98e595cb.gif)
 
 
 
