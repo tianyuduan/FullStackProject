@@ -1,13 +1,14 @@
 
 
-.footer-Wrap{
+.footer1{
   // left: 0;
   // right: 0;
   height: 100vh;
   overflow: hidden;
   z-index: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   background-image: url("http://www.wallpaperhdc.com/wp-content/uploads/2017/05/minimalist-photography-wallpaper-hd-images.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -15,32 +16,50 @@
   // background-size: 100%;
   margin-bottom: -200px;
   width: 100%;
-  background-position: 50% 50%;
-  font-size: 72px;
+  background-position: 50% 80%;
+  font-size: 48px;
   font-family: 'Open Sans Condensed', sans-serif;
   letter-spacing: 2px;
   color: #323031;
 }
-
-.about {
-  width: 700px;
-  font-size: 24px;
+div.footer-Wrap {
+  margin-top: 3%;
 }
 
+.hover15 {
+
+  margin-top: 3%;
+  font-size: 24;
+  :hover {
+    opacity: .7
+  }
+
+}
+.about {
+  margin-top: 5%;
+  width: 700px;
+  font-size: 18px;
+}
+
+.side-photo {
+  border: 2px solid red;
+  overflow: hidden;
+  z-index: 5;
+  justify-content: center;
+  background-image: url("http://res.cloudinary.com/djubcegxh/image/upload/c_scale,w_450/v1501258624/profile-a8b02ec9c13cf68cee40ace72bc49ead_ow9yun.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.95;
+  width: 450px;
+  height: 414px;
+  margin-left: 60%;
+}
+div.after-grid-text-container {
+
+}
 /* Circle */
 
-.hover15  {
-	display: block;
-	background: rgba(255,255,255,.2);
-	border-radius: 100%;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	opacity: 0;
-}
-.hover15 :hover{
-	-webkit-animation: circle .75s;
-	animation: circle .75s;
-}
+
 // @-webkit-keyframes circle {
 // 	0% {
 // 		opacity: 1;
@@ -67,3 +86,8 @@
 // 		opacity: 0;
 // 	}
 // }
+
+.MainContent {
+  display: flex;
+  flex-direction: column;
+}

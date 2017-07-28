@@ -1,4 +1,4 @@
-import { values, filter } from 'lodash';
+import { values, filter, shuffle } from 'lodash';
 
   let photoGallery;
 
@@ -15,30 +15,12 @@ return filter(photoGallery, (photo) => (
 ));
 };
 
-export const selectSeascapePhotos = ({ photos }) => {
-  photoGallery = values(photos.photos).reverse();
-  return filter(photoGallery, (photo) => (
-    photo.tag_ids[0] === 13
-  ));
+export const selectShufflePhotos = ({ photos }) => {
+   photoGallery = values(photos.photos).reverse();
+   return shuffle(photoGallery);
 };
 
-export const selectPeoplePhotos = () => {
-  return filter(photoGallery, (photo) => (
-    photo.tag_ids[0] === 14
-  ));
-};
 
-export const selectWildlifePhotos = () => {
-  return filter(photoGallery, (photo) => (
-    photo.tag_ids[0] === 15
-  ));
-};
-
-export const selectOthersPhotos = () => {
-  return filter(photoGallery, (photo) => (
-    photo.tag_ids[0] === 16
-  ));
-};
 
 
 // _.filter(photos, photo => photo.tagId === id);

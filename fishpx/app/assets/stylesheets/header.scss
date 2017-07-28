@@ -7,8 +7,9 @@
   width: 900px;
   font-weight: bold;
   text-align: center;
-  top: 500px;
-  top: calc(50% + 100px);
+  // top: 500px;
+  // top: calc(50% + 100px);
+  top: 60%;
   font-size: 56px;
 }
 
@@ -17,8 +18,10 @@
   z-index: 1;
   width: 1200px;
   text-align: center;
-  top: 650px;
-  top: calc(70% + 50px);
+  // padding-top: 2%;
+  // top: 650px;
+  top: 75%;
+  // top: calc(70% + 50px);
   font-size: 32px;
 }
 

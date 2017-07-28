@@ -17,7 +17,7 @@ const AutoCompleteData = ({onNewRequest, tagData}) => {
   return (
   <div>
     <AutoComplete
-      hintText="Type your Tag!"
+      hintText="Please select a category"
       filter={AutoComplete.noFilter}
       dataSource={tagData}
       dataSourceConfig={dataSourceConfig}

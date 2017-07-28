@@ -1,4 +1,4 @@
-
+let InfiniteScroll = require('react-infinite-scroll')(React);
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
@@ -9,14 +9,14 @@ import Masonry from 'react-masonry-component';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
-import { DotLoader } from 'react-spinners';
 
+import { DotLoader } from 'react-spinners';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
-class PhotosIndex extends React.Component {
+class Discover extends React.Component {
     constructor(props) {
       super(props);
 
@@ -27,22 +27,28 @@ class PhotosIndex extends React.Component {
        tags: "",
        open: false,
        photosLists: props.photos,
+       hasMoreItems: true,
        loading: true,
+       elements: []
       };
       this.componentDidMount = this.componentDidMount.bind(this);
       this.handleOpen = this.handleOpen.bind(this);
       this.handleClose = this.handleClose.bind(this);
+      this.handleInfiniteLoad = this.handleInfiniteLoad.bind(this);
     }
 
   componentWillReceiveProps(nextProps) {
 // on update
-  this.setState({photosLists: nextProps.photos});
+      this.setState({photosLists: nextProps.photos});
+
   }
 
   componentDidMount() {
-    this.props.fetchPhotos(
+
+      this.props.fetchPhotos(
       this.props.session.currentUser.id).then(
         setTimeout(() => this.setState({ loading: false }), 1800));
+
   }
 
   handleOpen(url, description, title) {
@@ -55,6 +61,33 @@ class PhotosIndex extends React.Component {
 
   handleClose() {
     this.setState({open: false});
+  }
+
+  buildElements(elementLength, combined) {
+    let newElement = this.state.elements;
+    // let loopCount = combined - elementLength;
+
+    for (let i = elementLength; i < combined; i++) {
+      newElement.push(this.props.photos[i]);
+     }
+     return newElement;
+  }
+
+  handleInfiniteLoad() {
+    let that = this;
+    const allPhotos = this.state.photosLists;
+    if (allPhotos.length - this.state.elements.length <=0) { return;}
+
+    setTimeout(() => {
+      let elementLength = that.state.elements.length;
+      let photosLeft = allPhotos.length - elementLength;
+      let photostoAdd = (photosLeft < 8) ? photosLeft : 8;//
+      let newElements = that.buildElements(elementLength, elementLength + photostoAdd);
+      // that.state.elements.concat(newElements)
+      that.setState({
+        elements: that.state.elements.concat(newElements)
+      });
+    });
   }
 
 
@@ -71,7 +104,7 @@ class PhotosIndex extends React.Component {
         fitWidth: true
     };
 
-    const { photos, session } = this.props;
+    const {  session, photos } = this.props;
 
     const actions = [
       <FlatButton
@@ -99,12 +132,11 @@ class PhotosIndex extends React.Component {
       );
 
       function toTitleCase(str)
-{
-    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-}
+      {
+      return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+      }
 
     let elements = this.state.photosLists.map((tile) => (
-      <div className="imageGridDiv">
       <li className="imageGridUser">
         <h1 className="imageGridTitle">{toTitleCase(tile.title)}</h1>
           <img src={tile.image_url}
@@ -112,50 +144,48 @@ class PhotosIndex extends React.Component {
             key={tile.image_url}
             ></img>
         </li>
-        </div>
     )
-  );
+    );
 
- //  let willRender = () => (
- // (this.state.photosLists) ?
- // <Masonry
- //     className={'my-gallery-class'}
- //     elementType={'ul'}
- //     options={masonryOptions}
- //     disableImagesLoaded={false}
- //     updateOnEachImageLoad={false}
- // >
- //     {elements}
- // </Masonry>
- //   : <CircularProgressSimple/>
- //  );
- if (this.state.loading) {
-       return (
-         <div className='sweet-loading'>
-      <DotLoader
-        color={'#FFB6C1'}
-        loading={this.state.loading}
-      />
-     </div>
-      );
-    }
+let items = () => (
+  <Masonry
+      className={'my-gallery-class'}
+      elementType={'ul'}
+      options={masonryOptions}
+      disableImagesLoaded={false}
+      updateOnEachImageLoad={false}
+  >
+      {elements}
+      {modal()}
+  </Masonry>
+);
+
+if (this.state.loading) {
+      return (
+
+        <div className='sweet-loading'>
+     <DotLoader
+       color={'#FFB6C1'}
+       loading={this.state.loading}
+     />
+    </div>
+ );
+}
   else {
 
     return (
-      <Masonry
-          className={'my-gallery-class'}
-          elementType={'ul'}
-          options={masonryOptions}
-          disableImagesLoaded={false}
-          updateOnEachImageLoad={false}
-      >
-          {elements}
-          {modal()}
-      </Masonry>
+
+    <InfiniteScroll
+    pageStart= "0"
+    loadMore={this.handleInfiniteLoad}
+    hasMore={true || false}
+    loader={<div className="loader">Loading ...</div>}>
+    {items}
+</InfiniteScroll>
+
   );
   }
-
   }
 }
 
-export default PhotosIndex;
+export default Discover;

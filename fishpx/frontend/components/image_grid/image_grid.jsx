@@ -134,8 +134,26 @@ const IMAGES =
         thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375/v1500490632/Underwater-Fish-Photography_crbs43.jpg",
         thumbnailWidth: 549,
         thumbnailHeight: 375,
-        caption: "Boats (Jeshu John - designerspics.com)"
 },
+{
+        src: "http://res.cloudinary.com/djubcegxh/image/upload/v1501246901/Underwater-Boys-Photography_nh9eoj.jpg",
+        thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375/v1501246901/Underwater-Boys-Photography_nh9eoj.jpg",
+        thumbnailWidth: 549,
+        thumbnailHeight: 375,
+},
+{
+        src: "http://res.cloudinary.com/djubcegxh/image/upload/v1501132918/claudio-guglieri-287940-min_yk7k0e.jpg",
+        thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375/v1501132918/claudio-guglieri-287940-min_yk7k0e.jpg",
+        thumbnailWidth: 563,
+        thumbnailHeight: 375,
+},
+{
+        src: "http://res.cloudinary.com/djubcegxh/image/upload/v1501246900/Shining-Fish-Underwater-Photography_wpujbq.jpg",
+        thumbnail: "http://res.cloudinary.com/djubcegxh/image/upload/c_scale,h_375/v1501246900/Shining-Fish-Underwater-Photography_wpujbq.jpg",
+        thumbnailWidth: 488,
+        thumbnailHeight: 375,
+},
+
 ];
 /**
  * A simple example of a scrollable `GridList` containing a [Subheader](/#/components/subheader).
@@ -147,7 +165,7 @@ const GridListExampleSimple = () => (
       rowHeight={375} margin={5}
       backdropClosesModal={true}
       enableLightbox = {false}
-      />,
+      />
     </div>
 );
 
