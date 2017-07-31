@@ -758,7 +758,7 @@ tag_id: t4.id
 
 m61 = Photo.create!(
     title: "Looking at the ocean",
-    image_url: "https://cloudinary.com/console/media_library#/dialog/image/upload/warren-wong-311524-min_yp5req",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501280370/warren-wong-311524-min_yp5req.jpg",
     description: "Im so cool",
     user_id: master.id,
 )
