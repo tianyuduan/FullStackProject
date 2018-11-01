@@ -8,12 +8,20 @@ import CircularProgressSimple from '../widgets/loading.jsx';
 import Masonry from 'react-masonry-component';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-
+import ReactModal from 'react-modal';
+import { DotLoader } from 'react-spinners';
 
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+
+const styles = {
+  modalStyle: {
+    maxHeight: "100%",
+    maxWidth: "100%",
+  }
+};
 
 class SeaScape extends React.Component {
     constructor(props) {
@@ -25,6 +33,7 @@ class SeaScape extends React.Component {
        image_url: "",
        tags: "",
        open: false,
+       loading: true,
        photosLists: props.photos
       };
       this.componentDidMount = this.componentDidMount.bind(this);
@@ -39,7 +48,8 @@ class SeaScape extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhotos(
-      this.props.session.currentUser.id);
+      this.props.session.currentUser.id).then(
+        setTimeout(() => this.setState({ loading: false }), 1300));
   }
 
   handleOpen(url, description, title) {
@@ -56,7 +66,6 @@ class SeaScape extends React.Component {
 
 
   render() {
-
     const customContentStyle = {
     width: '75%',
     maxWidth: 'none',
@@ -78,9 +87,7 @@ class SeaScape extends React.Component {
       />,
       ];
 
-
       const modal = () => (
-
         <Dialog
           title={this.state.title}
           actions={actions}
@@ -90,9 +97,28 @@ class SeaScape extends React.Component {
           autoDetectWindowHeight={false}
           onRequestClose={this.handleClose}
           >
-          <img src={this.state.image_url}  />
+          <img src={this.state.image_url}/>
         </Dialog>
+      );
 
+      const modal2 = () => (
+        <ReactModal
+          isOpen={this.state.open}
+          contentLabel={this.state.title}
+          onRequestClose={this.handleClose}
+          shouldFocusAfterRender={true}
+          style={{ overlay: {
+            zIndex: 10,
+              },
+           content: {
+            zIndex: 10,
+            top: "3%",
+            bottom: "3%",
+              }
+            }}
+          >
+          <img src={this.state.image_url} style={styles.modalStyle}/>
+        </ReactModal>
       );
 
       function toTitleCase(str)
@@ -112,19 +138,30 @@ class SeaScape extends React.Component {
     );
 
 
-    return (
-      <Masonry
-          className={'my-gallery-class'}
-          elementType={'ul'}
-          options={masonryOptions}
-          disableImagesLoaded={false}
-          updateOnEachImageLoad={false}
-      >
-          {elements}
-          {modal()}
-      </Masonry>
-  );
-
+      if (this.state.loading) {
+            return (
+              <div className='sweet-loading'>
+           <DotLoader
+             color={'#FFB6C1'}
+             loading={this.state.loading}
+           />
+          </div>
+           );
+         }
+       else {
+         return (
+           <Masonry
+               className={'my-gallery-class'}
+               elementType={'ul'}
+               options={masonryOptions}
+               disableImagesLoaded={false}
+               updateOnEachImageLoad={false}
+           >
+               {elements}
+               {modal2()}
+           </Masonry>
+         );
+       }
   }
 }
 

@@ -9,6 +9,8 @@ import Masonry from 'react-masonry-component';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
+import { DotLoader } from 'react-spinners';
+
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
@@ -24,6 +26,7 @@ class Wildlife extends React.Component {
        image_url: "",
        tags: "",
        open: false,
+       loading: true,
        photosLists: props.photos
       };
       this.componentDidMount = this.componentDidMount.bind(this);
@@ -38,9 +41,8 @@ class Wildlife extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhotos(
-      this.props.session.currentUser.id);
-
-      // this.props.fetchTags();
+      this.props.session.currentUser.id).then(
+        setTimeout(() => this.setState({ loading: false }), 1300));
   }
 
   handleOpen(url, description, title) {
@@ -122,18 +124,30 @@ class Wildlife extends React.Component {
   );
 
 
-    return (
-      <Masonry
-          className={'my-gallery-class'}
-          elementType={'ul'}
-          options={masonryOptions}
-          disableImagesLoaded={false}
-          updateOnEachImageLoad={false}
-      >
-          {elements}
-          {modal()}
-      </Masonry>
-  );
+  if (this.state.loading) {
+        return (
+          <div className='sweet-loading'>
+       <DotLoader
+         color={'#FFB6C1'}
+         loading={this.state.loading}
+       />
+      </div>
+       );
+     }
+   else {
+     return (
+       <Masonry
+           className={'my-gallery-class'}
+           elementType={'ul'}
+           options={masonryOptions}
+           disableImagesLoaded={false}
+           updateOnEachImageLoad={false}
+       >
+           {elements}
+           {modal()}
+       </Masonry>
+     );
+   }
 
   }
 }

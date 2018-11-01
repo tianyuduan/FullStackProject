@@ -42,7 +42,7 @@ class PhotosIndex extends React.Component {
   componentDidMount() {
     this.props.fetchPhotos(
       this.props.session.currentUser.id).then(
-        setTimeout(() => this.setState({ loading: false }), 1800));
+        setTimeout(() => this.setState({ loading: false }), 1500));
   }
 
   handleOpen(url, description, title) {
@@ -140,7 +140,6 @@ class PhotosIndex extends React.Component {
       );
     }
   else {
-
     return (
       <Masonry
           className={'my-gallery-class'}
@@ -152,7 +151,7 @@ class PhotosIndex extends React.Component {
           {elements}
           {modal()}
       </Masonry>
-  );
+    );
   }
 
   }

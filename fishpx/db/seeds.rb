@@ -241,7 +241,7 @@ tag_id: t1.id
 
 m18 = Photo.create!(
     title: "Breathtaking",
-    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501127769/julia-caesar-15078-min_n3mflf.jpg",
+    image_url: "https://res.cloudinary.com/djubcegxh/image/upload/c_scale,w_966/v1501127769/julia-caesar-15078-min_n3mflf.jpg",
     description: "Speechless",
     user_id: master.id,
 )

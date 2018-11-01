@@ -21,7 +21,6 @@ const styles = {
 
   },
   tabs: {
-    // backgroundColor: 'blue'
   },
   tab: {
     backgroundColor: 'white',
