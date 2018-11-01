@@ -61,7 +61,7 @@ class Wildlife extends React.Component {
     console.log(tagData);
 
     const customContentStyle = {
-    width: '80% !important',
+    width: '75% !important',
     maxWidth: 'none',
   };
 

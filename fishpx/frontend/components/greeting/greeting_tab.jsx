@@ -8,6 +8,7 @@ import OtherContainer from '../tabs/other_container.js';
 import WildlifeContainer from '../tabs/wildlife_container.js';
 import PeopleContainer from '../tabs/people_container.js';
 import DiscoverContainer from '../tabs/discover_container.js';
+import CircularProgressSimple from '../widgets/loading.jsx';
 
 const styles = {
   headline: {
@@ -23,10 +24,14 @@ const styles = {
     // backgroundColor: 'blue'
   },
   tab: {
-    // backgroundColor: 'blue'
     backgroundColor: 'white',
     color: "gray",
     fontSize: 14,
+  },
+  circle: {
+    justifyContent: 'center',
+    color: "green",
+    border: "2px green",
   }
 };
 
@@ -37,6 +42,7 @@ class TabsView extends React.Component {
     super(props);
     this.state = {
       slideIndex: 0,
+      position: 0
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -47,56 +53,69 @@ class TabsView extends React.Component {
     });
   }
 
+  componentDidMount(){
+    let myVar = setTimeout(()=> this.setState({position: 1}), 50000);
+  }
+
+
   render() {
-    return (
-      <div>
-        <Tabs
-          className="allTabs"
-          onChange={this.handleChange}
-          value={this.state.slideIndex}
-          style={styles.tabs}
-        >
-          <Tab className="Discover" label="Discover" value={0}
-            style={styles.tab}
-            />
-          <Tab className="Seascape" label="Seascape" value={1}
-            style={styles.tab}
-            />
-          <Tab className="Discover" label="WildLife" value={2}
-            style={styles.tab} />
-          <Tab className="People" label="People" value={3}
-            style={styles.tab} />
-          <Tab className="Others" label="Others" value={4}
-            style={styles.tab}/>
-          <Tab className="AllUserUploads" label="All User Uploads" value={5}
-            style={styles.tab} />
-        </Tabs>
-        <SwipeableViews
-          index={this.state.slideIndex}
-          onChangeIndex={this.handleChange}
-        >
-          <div className="tabsCssss" >
-            <h2 style={styles.slide}></h2>
-            <DiscoverContainer/>
+      if (this.state.position == 1 ) {
+        return (
+          <div>
+            <Tabs
+              className="allTabs"
+              onChange={this.handleChange}
+              value={this.state.slideIndex}
+              style={styles.tabs}
+            >
+              <Tab className="Discover" label="Discover" value={0}
+                style={styles.tab}
+                />
+              <Tab className="Seascape" label="Seascape" value={1}
+                style={styles.tab}
+                />
+              <Tab className="Discover" label="WildLife" value={2}
+                style={styles.tab} />
+              <Tab className="People" label="People" value={3}
+                style={styles.tab} />
+              <Tab className="Others" label="Others" value={4}
+                style={styles.tab}/>
+              <Tab className="AllUserUploads" label="All User Uploads" value={5}
+                style={styles.tab} />
+            </Tabs>
+            <SwipeableViews
+              index={this.state.slideIndex}
+              onChangeIndex={this.handleChange}
+            >
+              <div className="tabsCssss" >
+                <h2 style={styles.slide}></h2>
+                <DiscoverContainer/>
+              </div>
+              <div style={styles.slide}>
+                <SeascapeContainer/>
+              </div>
+              <div style={styles.slide}>
+                <WildlifeContainer/>
+              </div>
+              <div style={styles.slide}>
+                <PeopleContainer/>
+              </div>
+              <div style={styles.slide}>
+                <OtherContainer/>
+              </div>
+              <div style={styles.slide}>
+              <PhotosIndexContainer/>
+              </div>
+            </SwipeableViews>
           </div>
-          <div style={styles.slide}>
-            <SeascapeContainer></SeascapeContainer>
+        );
+      } else {
+        return(
+          <div className="circularProgress">
+          <CircularProgressSimple></CircularProgressSimple>
           </div>
-          <div style={styles.slide}>
-            <WildlifeContainer></WildlifeContainer>
-          </div>
-          <div style={styles.slide}>
-            <PeopleContainer></PeopleContainer>
-          </div>
-          <div style={styles.slide}>
-            <OtherContainer></OtherContainer>
-          </div>
-          <div style={styles.slide}>
-          <PhotosIndexContainer/>
-          </div>
-        </SwipeableViews>
-      </div>
-    );
+        );
+      }
   }
 }
 
