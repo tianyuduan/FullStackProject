@@ -9,7 +9,6 @@ import Masonry from 'react-masonry-component';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
-
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
@@ -62,9 +61,18 @@ class Wildlife extends React.Component {
     console.log(tagData);
 
     const customContentStyle = {
-    width: '75%',
+    width: '80% !important',
     maxWidth: 'none',
   };
+
+  function zoom(element) {
+           var newTab = window.open();
+           var data = document.getElementById("choicedPhoto").getAttribute("src");
+           setTimeout(function () {
+               newTab.document.body.innerHTML = "<img src='" + data + "'>";
+           }, 500);
+           return false;
+       }
 
     let masonryOptions = {
         transitionDuration: 0,
@@ -82,9 +90,7 @@ class Wildlife extends React.Component {
       />,
       ];
 
-
       const modal = () => (
-
         <Dialog
           title={this.state.title}
           actions={actions}
@@ -94,7 +100,7 @@ class Wildlife extends React.Component {
           autoDetectWindowHeight={false}
           onRequestClose={this.handleClose}
           >
-          <img src={this.state.image_url}  />
+          <img src={this.state.image_url}/>
         </Dialog>
 
       );

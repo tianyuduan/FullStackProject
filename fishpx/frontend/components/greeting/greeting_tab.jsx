@@ -27,7 +27,6 @@ const styles = {
     backgroundColor: 'white',
     color: "gray",
     fontSize: 14,
-
   }
 };
 
@@ -47,8 +46,6 @@ class TabsView extends React.Component {
       slideIndex: value,
     });
   }
-
-
 
   render() {
     return (
