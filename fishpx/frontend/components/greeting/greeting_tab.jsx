@@ -53,10 +53,26 @@ class TabsView extends React.Component {
     });
   }
 
-  componentDidMount(){
-    let myVar = setTimeout(()=> this.setState({position: 1}), 50000);
+  componentDidMount() {
+    let myVar = setTimeout(()=> this.setState({position: 1}), 2000);
   }
 
+ switchTab(state) {
+  switch(state) {
+    case 1:
+      return <SeascapeContainer/>;
+    case 2:
+      return <WildlifeContainer/>;
+    case 3:
+      return <PeopleContainer/>;
+    case 4:
+      return <OtherContainer/>;
+    case 5:
+      return <PhotosIndexContainer/>;
+    default:
+      return <DiscoverContainer/>;
+  }
+}
 
   render() {
       if (this.state.position == 1 ) {
@@ -74,7 +90,7 @@ class TabsView extends React.Component {
               <Tab className="Seascape" label="Seascape" value={1}
                 style={styles.tab}
                 />
-              <Tab className="Discover" label="WildLife" value={2}
+              <Tab className="WildLife" label="WildLife" value={2}
                 style={styles.tab} />
               <Tab className="People" label="People" value={3}
                 style={styles.tab} />
@@ -83,28 +99,28 @@ class TabsView extends React.Component {
               <Tab className="AllUserUploads" label="All User Uploads" value={5}
                 style={styles.tab} />
             </Tabs>
+
             <SwipeableViews
               index={this.state.slideIndex}
               onChangeIndex={this.handleChange}
             >
               <div className="tabsCssss" >
-                <h2 style={styles.slide}></h2>
-                <DiscoverContainer/>
+                <DiscoverContainer/>;
               </div>
-              <div style={styles.slide}>
-                <SeascapeContainer/>
+              <div className="tabsCssss" >
+                {this.switchTab(this.state.slideIndex)}
               </div>
-              <div style={styles.slide}>
-                <WildlifeContainer/>
+              <div className="tabsCssss" >
+                {this.switchTab(this.state.slideIndex)}
               </div>
-              <div style={styles.slide}>
-                <PeopleContainer/>
+              <div className="tabsCssss" >
+                {this.switchTab(this.state.slideIndex)}
               </div>
-              <div style={styles.slide}>
-                <OtherContainer/>
+              <div className="tabsCssss" >
+                {this.switchTab(this.state.slideIndex)}
               </div>
-              <div style={styles.slide}>
-              <PhotosIndexContainer/>
+              <div className="tabsCssss" >
+                {this.switchTab(this.state.slideIndex)}
               </div>
             </SwipeableViews>
           </div>
