@@ -34,7 +34,6 @@ const styles = {
   }
 };
 
-
 class TabsView extends React.Component {
 
   constructor(props) {

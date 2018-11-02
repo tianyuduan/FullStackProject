@@ -1,8 +1,4 @@
 import React from 'react';
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 const styles = {
   root: {
@@ -10,9 +6,7 @@ const styles = {
   },
 };
 
-
 const HeaderHome = () => (
-
   <div className= "header1" style={styles.root}>
       <div className='Wrap'>
         <h1 className = 'header1Text'>Get Inspired to Share your best Photos</h1>

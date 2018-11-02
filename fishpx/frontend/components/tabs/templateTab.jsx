@@ -1,20 +1,7 @@
-
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add';
-import ModalUpload from '../modal_upload/modal_upload.jsx';
-import CircularProgressSimple from '../widgets/loading.jsx';
 import Masonry from 'react-masonry-component';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
 import ReactModal from 'react-modal';
 import { DotLoader } from 'react-spinners';
-
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 const styles = {
   modalStyle: {
@@ -23,7 +10,7 @@ const styles = {
   }
 };
 
-class SeaScape extends React.Component {
+class templateTab extends React.Component {
     constructor(props) {
       super(props);
 
@@ -49,7 +36,7 @@ class SeaScape extends React.Component {
   componentDidMount() {
     this.props.fetchPhotos(
       this.props.session.currentUser.id).then(
-        setTimeout(() => this.setState({ loading: false }), 1300));
+        setTimeout(() => this.setState({ loading: false }), 700));
   }
 
   handleOpen(url, description, title) {
@@ -64,13 +51,7 @@ class SeaScape extends React.Component {
     this.setState({open: false});
   }
 
-
   render() {
-    const customContentStyle = {
-    width: '75%',
-    maxWidth: 'none',
-  };
-
     let masonryOptions = {
         transitionDuration: 0,
         gutter: 20,
@@ -79,37 +60,17 @@ class SeaScape extends React.Component {
 
     const { photos, session } = this.props;
 
-    const actions = [
-      <FlatButton
-        label="Cancel"
-        primary={true}
-        onTouchTap={this.handleClose}
-      />,
-      ];
-
       const modal = () => (
-        <Dialog
-          title={this.state.title}
-          actions={actions}
-          open={this.state.open}
-          contentStyle={customContentStyle}
-          autoScrollBodyContent={true}
-          autoDetectWindowHeight={false}
-          onRequestClose={this.handleClose}
-          >
-          <img src={this.state.image_url}/>
-        </Dialog>
-      );
-
-      const modal2 = () => (
         <ReactModal
           isOpen={this.state.open}
           contentLabel={this.state.title}
           onRequestClose={this.handleClose}
           shouldFocusAfterRender={true}
-          style={{ overlay: {
+          ariaHideApp={true}
+          style={{
+            overlay: {
             zIndex: 10,
-              },
+          },
            content: {
             zIndex: 10,
             top: "3%",
@@ -137,7 +98,6 @@ class SeaScape extends React.Component {
     )
     );
 
-
       if (this.state.loading) {
             return (
               <div className='sweet-loading'>
@@ -158,11 +118,11 @@ class SeaScape extends React.Component {
                updateOnEachImageLoad={false}
            >
                {elements}
-               {modal2()}
+               {modal()}
            </Masonry>
          );
        }
   }
 }
 
-export default SeaScape;
+export default templateTab;

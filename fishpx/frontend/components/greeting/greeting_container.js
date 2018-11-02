@@ -1,6 +1,5 @@
 
 import { connect } from 'react-redux';
-
 import { logout } from '../../actions/session_actions';
 import Greeting from './greeting';
 import { selectUserPhotos } from '../../reducers/selectors.js';

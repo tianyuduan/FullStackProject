@@ -1,12 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-import {cyan500} from 'material-ui/styles/colors';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import AppBar from 'material-ui/AppBar';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import GridListExampleSimple from '../image_grid/image_grid.jsx';
@@ -18,11 +11,8 @@ import ModalUploadContainer from '../modal_upload/modal_upload_container.js';
 import FooterHome from '../footer/footer.jsx';
 import Logo from '../logo/logo.jsx';
 import TabsExampleSimple from './greeting_tab.jsx';
-import CircularProgressSimple from '../widgets/loading.jsx';
-
 
 import SettingsDropContainer from '../widgets/settings_drop_container.js';
-import SettingsIcon from 'material-ui/svg-icons/action/settings.js';
 injectTapEventPlugin();
 
 
@@ -87,6 +77,3 @@ const Greeting = ({ currentUser, logout }) => (
 );
 
 export default Greeting;
-
-
-//styling

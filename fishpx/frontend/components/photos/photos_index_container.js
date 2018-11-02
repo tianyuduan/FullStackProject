@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import PhotosIndex from './photos_index.jsx';
+import PhotosIndex from '../tabs/templateTab.jsx';
 import { selectUserPhotos } from '../../reducers/selectors.js';
 
 import { fetchPhotos, fetchPhoto, updatePhoto, deletePhoto, createPhoto}

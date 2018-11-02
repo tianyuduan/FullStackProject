@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import {cyan500, transparent, grey50} from 'material-ui/styles/colors';
 import TextField from 'material-ui/TextField';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 import Scroll from 'react-scroll';
 
 class ModalSession extends React.Component {
