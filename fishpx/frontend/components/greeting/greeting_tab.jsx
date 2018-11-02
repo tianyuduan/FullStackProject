@@ -1,6 +1,7 @@
 import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
+import Scroll from 'react-scroll';
 
 import PhotosIndexContainer from '../photos/photos_index_container.js';
 import SeascapeContainer from '../tabs/seascape_container.js';
@@ -17,21 +18,11 @@ const styles = {
     marginBottom: 12,
     fontWeight: 400,
   },
-  slide: {
-
-  },
-  tabs: {
-  },
   tab: {
     backgroundColor: 'white',
     color: "gray",
     fontSize: 14,
   },
-  circle: {
-    justifyContent: 'center',
-    color: "green",
-    border: "2px green",
-  }
 };
 
 class TabsView extends React.Component {
@@ -51,12 +42,25 @@ class TabsView extends React.Component {
     });
   }
 
+  handleScroll() {
+    let scroll = Scroll.animateScroll;
+    scroll.scrollTo(window.innerHeight - 295, {
+      duration: 2000,
+      delay: 100,
+      smooth: true
+    });
+    this.setState({position: 3});
+  }
+
   componentDidMount() {
-    let myVar = setTimeout(()=> this.setState({position: 1}), 2000);
+    let loadingTimer = setTimeout(()=> this.setState({position: 1}), 2000);
+    let scrollTimer = setTimeout(()=> this.setState({position: 2}), 4500);
   }
 
  switchTab(state) {
   switch(state) {
+    case 0:
+      return <DiscoverContainer/>;
     case 1:
       return <SeascapeContainer/>;
     case 2:
@@ -73,37 +77,35 @@ class TabsView extends React.Component {
 }
 
   render() {
-      if (this.state.position == 1 ) {
+    if (this.state.position === 0 ) {
+         return (
+          <div className="circularProgress">
+          <CircularProgressSimple></CircularProgressSimple>
+          </div>
+        );
+    }
+    if (this.state.position === 2 ) {
+         this.handleScroll();
+    }
         return (
           <div>
             <Tabs
-              className="allTabs"
               onChange={this.handleChange}
               value={this.state.slideIndex}
-              style={styles.tabs}
             >
-              <Tab className="Discover" label="Discover" value={0}
-                style={styles.tab}
-                />
-              <Tab className="Seascape" label="Seascape" value={1}
-                style={styles.tab}
-                />
-              <Tab className="WildLife" label="WildLife" value={2}
-                style={styles.tab} />
-              <Tab className="People" label="People" value={3}
-                style={styles.tab} />
-              <Tab className="Others" label="Others" value={4}
-                style={styles.tab}/>
-              <Tab className="AllUserUploads" label="All User Uploads" value={5}
-                style={styles.tab} />
+              <Tab className="Discover" onActive={styles.active} label="Discover" value={0}  style={styles.tab}/>
+              <Tab className="Seascape" label="Seascape" value={1} style={styles.tab} />
+              <Tab className="Wildlife" label="Wildlife" value={2} style={styles.tab} />
+              <Tab className="People" label="People" value={3}  style={styles.tab} />
+              <Tab className="Others" label="Others" value={4} style={styles.tab}/>
+              <Tab className="AllUserUploads" label="All User Uploads" value={5} style={styles.tab} />
             </Tabs>
-
             <SwipeableViews
               index={this.state.slideIndex}
               onChangeIndex={this.handleChange}
             >
-              <div className="tabsCssss" >
-                <DiscoverContainer/>;
+              <div className="tabsCssss">
+                {this.switchTab(this.state.slideIndex)}
               </div>
               <div className="tabsCssss" >
                 {this.switchTab(this.state.slideIndex)}
@@ -123,13 +125,6 @@ class TabsView extends React.Component {
             </SwipeableViews>
           </div>
         );
-      } else {
-        return(
-          <div className="circularProgress">
-          <CircularProgressSimple></CircularProgressSimple>
-          </div>
-        );
-      }
   }
 }
 
