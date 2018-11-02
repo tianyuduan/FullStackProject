@@ -299,21 +299,128 @@ photo_id: m28.id,
 tag_id: t3.id
 )
 
-m29 = Photo.create!(
-    title: "Aquarium",
-    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501131082/samuel-zeller-248738-min_zggyn4.jpg",
-    description: "So Breathtaking and beautiful",
-    user_id: master.id,
-)
-
-ta29 = Tagging.create!(
-photo_id: m29.id,
-tag_id: t3.id
-)
-
 m30 = Photo.create!(
     title: "Out in the water",
     image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501131083/ravi-pinisetti-69440-min_t09l8x.jpg",
     description: "So Breathtaking and beautiful",
     user_id: master.id,
+)
+m40 = Photo.create!(
+    title: "Sunrise!",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501127770/kired-agbayani-240030-min_beldd1.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta40 = Tagging.create!(
+photo_id: m40.id,
+tag_id: t1.id
+)
+
+m41 = Photo.create!(
+    title: "D:",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501132091/yu-tang-146774-min_sfayjr.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta41 = Tagging.create!(
+photo_id: m41.id,
+tag_id: t3.id
+)
+
+m42 = Photo.create!(
+    title: "Whale!",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501132092/toa-heftiba-270774-min_bt2oit.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta42 = Tagging.create!(
+photo_id: m42.id,
+tag_id: t3.id
+)
+
+m43 = Photo.create!(
+    title: "Fishing!",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501132091/steinar-engeland-115728-min_ah5kyf.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta43 = Tagging.create!(
+photo_id: m43.id,
+tag_id: t2.id
+)
+
+m44 = Photo.create!(
+    title: "two fisherman",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501132091/przemyslaw-sakrajda-206998-min_z4kl0s.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta44 = Tagging.create!(
+photo_id: m44.id,
+tag_id: t2.id
+)
+
+m45 = Photo.create!(
+    title: "rise and shine!",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501132918/anders-wideskott-229372-min_yxdcut.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta45 = Tagging.create!(
+photo_id: m45.id,
+tag_id: t2.id
+)
+
+m46 = Photo.create!(
+    title: "fish race",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501132089/jeremy-bishop-93208-min_vvu8uf.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta46 = Tagging.create!(
+photo_id: m46.id,
+tag_id: t3.id
+)
+
+m47 = Photo.create!(
+    title: "Rainbow wildlife",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501132087/crystal-gard-228496-min_jcvyfh.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta47 = Tagging.create!(
+photo_id: m47.id,
+tag_id: t3.id
+)
+
+m48 = Photo.create!(
+    title: "Orange fish",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501132091/marius-masalar-132756-min_vrksrj.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta48 = Tagging.create!(
+photo_id: m48.id,
+tag_id: t3.id
+)
+
+m49 = Photo.create!(
+    title: "Small shark",
+    image_url: "http://res.cloudinary.com/djubcegxh/image/upload/v1501132089/jakob-owens-208998-min_gmlvt8.jpg",
+    description: "So Breathtaking and beautiful",
+    user_id: master.id,
+)
+
+ta49 = Tagging.create!(
+photo_id: m49.id,
+tag_id: t3.id
 )
