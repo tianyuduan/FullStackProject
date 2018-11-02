@@ -1,35 +1,10 @@
 import React from 'react';
-import Avatar from 'material-ui/Avatar';
-import FileFolder from 'material-ui/svg-icons/file/folder';
-import FontIcon from 'material-ui/FontIcon';
-import List from 'material-ui/List/List';
-import ListItem from 'material-ui/List/ListItem';
-import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
-import ModalUploadContainer from '../modal_upload/modal_upload_container.js';
-
-import SettingsIcon from 'material-ui/svg-icons/action/settings.js';
-import DropDownMenuOpen from './drop_down.jsx';
-import logOut from '../greeting/greeting.jsx';
 import IconMenu from 'material-ui/IconMenu';
 import ActionSettings from 'material-ui/svg-icons/action/settings';
 import IconButton from 'material-ui/IconButton';
-
-import FileUpload from 'material-ui/svg-icons/file/file-upload';
-
-import { Link, withRouter } from 'react-router-dom';
-import {cyan500, transparent, grey50} from 'material-ui/styles/colors';
-import TextField from 'material-ui/TextField';
-import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
-
-import AutoCompleteData from '../modal_upload/auto_complete_tags.jsx';
-
-import DropZone from 'react-dropzone';
 import superAgent from 'superagent';
-
-
 
 import {
   blue300,
@@ -134,7 +109,6 @@ export default class SettingsDrop extends React.Component {
     });
   }
 
-
   renderErrors() {
     return(
       <ul>
@@ -146,9 +120,6 @@ export default class SettingsDrop extends React.Component {
       </ul>
     );
   }
-
-
-
 
   render() {
     const changeColor = 'white';

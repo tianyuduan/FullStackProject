@@ -1,21 +1,16 @@
-
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add';
-import ModalUpload from '../modal_upload/modal_upload.jsx';
-import CircularProgressSimple from '../widgets/loading.jsx';
 import Masonry from 'react-masonry-component';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import ReactModal from 'react-modal';
+import { DotLoader } from 'react-spinners';
 
+const styles = {
+  modalStyle: {
+    maxHeight: "100%",
+    maxWidth: "100%",
+  }
+};
 
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-
-class Other extends React.Component {
+class templateTab extends React.Component {
     constructor(props) {
       super(props);
 
@@ -25,6 +20,7 @@ class Other extends React.Component {
        image_url: "",
        tags: "",
        open: false,
+       loading: true,
        photosLists: props.photos
       };
       this.componentDidMount = this.componentDidMount.bind(this);
@@ -39,7 +35,8 @@ class Other extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhotos(
-      this.props.session.currentUser.id);
+      this.props.session.currentUser.id).then(
+        setTimeout(() => this.setState({ loading: false }), 700));
   }
 
   handleOpen(url, description, title) {
@@ -54,14 +51,7 @@ class Other extends React.Component {
     this.setState({open: false});
   }
 
-
   render() {
-
-    const customContentStyle = {
-    width: '75%',
-    maxWidth: 'none',
-  };
-
     let masonryOptions = {
         transitionDuration: 0,
         gutter: 20,
@@ -70,29 +60,26 @@ class Other extends React.Component {
 
     const { photos, session } = this.props;
 
-    const actions = [
-      <FlatButton
-        label="Cancel"
-        primary={true}
-        onTouchTap={this.handleClose}
-      />,
-      ];
-
-
       const modal = () => (
-
-        <Dialog
-          title={this.state.title}
-          actions={actions}
-          open={this.state.open}
-          contentStyle={customContentStyle}
-          autoScrollBodyContent={true}
-          autoDetectWindowHeight={false}
+        <ReactModal
+          isOpen={this.state.open}
+          contentLabel={this.state.title}
           onRequestClose={this.handleClose}
+          shouldFocusAfterRender={true}
+          ariaHideApp={true}
+          style={{
+            overlay: {
+            zIndex: 10,
+          },
+           content: {
+            zIndex: 10,
+            top: "3%",
+            bottom: "3%",
+              }
+            }}
           >
-          <img src={this.state.image_url}  />
-        </Dialog>
-
+          <img src={this.state.image_url} style={styles.modalStyle}/>
+        </ReactModal>
       );
 
       function toTitleCase(str)
@@ -111,22 +98,31 @@ class Other extends React.Component {
     )
     );
 
-
-
-    return (
-      <Masonry
-          className={'my-gallery-class'}
-          elementType={'ul'}
-          options={masonryOptions}
-          disableImagesLoaded={false}
-          updateOnEachImageLoad={false}
-      >
-          {elements}
-          {modal()}
-      </Masonry>
-  );
-
+      if (this.state.loading) {
+            return (
+              <div className='sweet-loading'>
+           <DotLoader
+             color={'#FFB6C1'}
+             loading={this.state.loading}
+           />
+          </div>
+           );
+         }
+       else {
+         return (
+           <Masonry
+               className={'my-gallery-class'}
+               elementType={'ul'}
+               options={masonryOptions}
+               disableImagesLoaded={false}
+               updateOnEachImageLoad={false}
+           >
+               {elements}
+               {modal()}
+           </Masonry>
+         );
+       }
   }
 }
 
-export default Other;
+export default templateTab;

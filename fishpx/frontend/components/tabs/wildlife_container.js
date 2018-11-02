@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Wildlife from './wildlife.jsx';
+import Wildlife from './templateTab.jsx';
 import { selectUserPhotos } from '../../reducers/selectors.js';
 import { selectWildlifePhotos, selectTagPhotos } from '../../reducers/selectors.js';
 import { fetchPhotos, fetchPhoto, updatePhoto, deletePhoto, createPhoto }

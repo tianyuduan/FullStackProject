@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Other from './other.jsx';
+import Other from './templateTab.jsx';
 import { selectUserPhotos } from '../../reducers/selectors.js';
 import { selectTagPhotos } from '../../reducers/selectors.js';
 

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SeaScape from './seascape.jsx';
+import SeaScape from './templateTab.jsx';
 import { selectUserPhotos } from '../../reducers/selectors.js';
 import { selectTagPhotos } from '../../reducers/selectors.js';
 

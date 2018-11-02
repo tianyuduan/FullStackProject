@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Discover from './other.jsx';
+import Discover from './templateTab.jsx';
 import { selectUserPhotos } from '../../reducers/selectors.js';
 import { selectTagPhotos, selectShufflePhotos } from '../../reducers/selectors.js';
 
@@ -14,7 +14,6 @@ const mapStateToProps = state => {
     tags: state.tags,
   };
 };
-
 
 const mapDispatchToProps = dispatch => ({
   fetchPhotos: (userid) => dispatch(fetchPhotos(userid)),
