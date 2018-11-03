@@ -13,6 +13,8 @@ import Logo from '../logo/logo.jsx';
 import TabsExampleSimple from './greeting_tab.jsx';
 
 import SettingsDropContainer from '../widgets/settings_drop_container.js';
+
+
 injectTapEventPlugin();
 
 
@@ -31,11 +33,14 @@ const Main = () => (
 
 const splashPage = () => (
   <div>
-  			<div id="wrapper">
-  						<h1>Stellar</h1>
-  						<p>Just another free, fully responsive site template<br />
-  						built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.</p>
+    <Logo></Logo>
+    <ModalSessionContainer/>
+    <ContentHome></ContentHome>
 
+    <div className='splash-page'>
+  <link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          />
   					<nav id="nav">
   						<ul>
   							<li><a href="#intro" className="active">Introduction</a></li>
@@ -65,7 +70,7 @@ const splashPage = () => (
 
   							<section id="first" className="main special">
   								<header className="major">
-  									<h2>Magna veroeros</h2>
+  									<h2>Get motivated to share your best work</h2>
   								</header>
   								<ul className="features">
   									<li>
@@ -93,9 +98,8 @@ const splashPage = () => (
 
   							<section id="second" className="main special">
   								<header className="major">
-  									<h2>Ipsum consequat</h2>
-  									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-  									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+  									<h2>The Top Photos Chosen By You</h2>
+  									<p>Become part of a community that celebrates incredible photography</p>
   								</header>
   								<ul className="statistics">
   									<li className="style1">
@@ -152,28 +156,21 @@ const splashPage = () => (
   							</ul>
   						</section>
   						<section>
-  							<h2>Etiam feugiat</h2>
+  							<h2>Tianyu Duan</h2>
   							<dl className="alt">
-  								<dt>Address</dt>
-  								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
   								<dt>Phone</dt>
-  								<dd>(000) 000-0000 x 0000</dd>
+  								<dd>(530) 312-1541</dd>
   								<dt>Email</dt>
-  								<dd><a href="#">information@untitled.tld</a></dd>
+  								<dd><a href="#">tianyuduan1991@gmail.com</a></dd>
   							</dl>
   							<ul className="icons">
-  								<li><a href="#" className="icon fa-twitter alt"><span className="label">Twitter</span></a></li>
-  								<li><a href="#" className="icon fa-facebook alt"><span className="label">Facebook</span></a></li>
-  								<li><a href="#" className="icon fa-instagram alt"><span className="label">Instagram</span></a></li>
-  								<li><a href="#" className="icon fa-github alt"><span className="label">GitHub</span></a></li>
-  								<li><a href="#" className="icon fa-dribbble alt"><span className="label">Dribbble</span></a></li>
+                  <li><a className="icon-margin" href="https://www.linkedin.com/in/tianyu-duan/"><span className="label"><i className="fab fa-linkedin-in fa-2x"></i></span></a></li>
+                  <li><a className="icon-margin" href="https://github.com/tianyuduan"><span className="label"><i className="fab fa-github fa-2x"></i></span></a></li>
   							</ul>
   						</section>
-  						<p className="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
   					</footer>
-
+          </div>
   			</div>
-  </div>
 );
 
 export const personalGreeting = (currentUser, logout) => (
