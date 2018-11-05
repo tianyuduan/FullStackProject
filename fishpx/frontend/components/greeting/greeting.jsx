@@ -1,11 +1,11 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-
 import GridListExampleSimple from '../image_grid/image_grid.jsx';
 import ModalSessionContainer from '../modal_session/modal_session_container.js';
 import HeaderHome from '../header/header.jsx';
 import ContentHome from '../content/content.jsx';
+import Scroll from 'react-scroll';
 
 import MasonaryHome from '../image_grid/masonary_grid_home.jsx';
 import ModalUploadContainer from '../modal_upload/modal_upload_container.js';
@@ -18,6 +18,18 @@ import SettingsDropContainer from '../widgets/settings_drop_container.js';
 
 injectTapEventPlugin();
 
+function handleScroll(input) {
+    // return {
+    //     if (input === 'features') {
+    //       let scroll = Scroll.animateScroll;
+    //       scroll.scrollTo(window.innerHeight, {
+    //         duration: 2000,
+    //         delay: 100,
+    //         smooth: true,
+    //       }
+    //     }
+    //   )};
+};
 
 const Main = () => (
     <h1>
@@ -46,9 +58,9 @@ const splashPage = () => (
 					<nav id="nav">
 						<ul>
               <li><a href="#intro">Introduction</a></li>
-              <li><a href="#first">Gallery</a></li>
-              <li><a href="#second">Features</a></li>
-              <li><a href="#cta">Contact</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#contact">Contact</a></li>
 						</ul>
 					</nav>
 
@@ -67,7 +79,7 @@ const splashPage = () => (
 								</div>
 							</section>
 
-							<section id="first" className="main special">
+							<section id="gallery" className="main special">
 								<header className="major main-padding">
 									<h2>Get motivated to share your best work</h2>
 								</header>
@@ -81,7 +93,7 @@ const splashPage = () => (
                   </ul>
 							</section>
 
-							<section id="second" className="main special main-padding">
+							<section id="features" className="main special main-padding">
 								<header className="major">
 									<h2>The Top Photos Chosen By You</h2>
 									<p>Become part of a community that celebrates incredible photography</p>
@@ -96,7 +108,7 @@ const splashPage = () => (
 					</div>
 
 					<footer id="footer" className='last-footer'>
-						<section>
+						<section id="contact">
 							<h2>Contact me</h2>
 							<p>Hello! I am a software developer in the Bay Area.
               I am looking for new opportunities and would love to chat.
@@ -117,7 +129,6 @@ const splashPage = () => (
                 </div>
   						</section>
 					</footer>
-
 			  </div>
       </div>
   </div>

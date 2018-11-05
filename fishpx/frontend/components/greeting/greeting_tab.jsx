@@ -2,7 +2,6 @@ import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 import Scroll from 'react-scroll';
-
 import PhotosIndexContainer from '../photos/photos_index_container.js';
 import SeascapeContainer from '../tabs/seascape_container.js';
 import OtherContainer from '../tabs/other_container.js';
@@ -43,18 +42,22 @@ class TabsView extends React.Component {
   }
 
   handleScroll() {
-    let scroll = Scroll.animateScroll;
-    scroll.scrollTo(window.innerHeight - 295, {
-      duration: 2000,
-      delay: 100,
-      smooth: true
-    });
+    let executed = false;
+    if (!executed) {
+      let scroll = Scroll.animateScroll;
+      executed = true;
+      scroll.scrollTo(window.innerHeight - 295, {
+        duration: 2000,
+        delay: 100,
+        smooth: true
+      });
+    }
     this.setState({position: 3});
   }
 
   componentDidMount() {
-    let loadingTimer = setTimeout(()=> this.setState({position: 1}), 2000);
-    let scrollTimer = setTimeout(()=> this.setState({position: 2}), 4500);
+    let loadingTimer = setTimeout(()=> this.setState({position: 1}), 2500);
+    let scrollTimer = setTimeout(()=> this.setState({position: 2}), 500);
   }
 
  switchTab(state) {
@@ -85,7 +88,7 @@ class TabsView extends React.Component {
         );
     }
     if (this.state.position === 2 ) {
-         this.handleScroll();
+      this.handleScroll();
     }
         return (
           <div>
@@ -105,7 +108,7 @@ class TabsView extends React.Component {
               onChangeIndex={this.handleChange}
             >
               <div className="tabsCssss">
-                {this.switchTab(this.state.slideIndex)}
+                <DiscoverContainer/>;
               </div>
               <div className="tabsCssss" >
                 {this.switchTab(this.state.slideIndex)}
@@ -114,7 +117,7 @@ class TabsView extends React.Component {
                 {this.switchTab(this.state.slideIndex)}
               </div>
               <div className="tabsCssss" >
-                {this.switchTab(this.state.slideIndex)}
+              {this.switchTab(this.state.slideIndex)}
               </div>
               <div className="tabsCssss" >
                 {this.switchTab(this.state.slideIndex)}

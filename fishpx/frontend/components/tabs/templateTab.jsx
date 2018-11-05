@@ -37,7 +37,6 @@ class templateTab extends React.Component {
     this.props.fetchPhotos(
       this.props.session.currentUser.id).then(
         setTimeout(() => this.setState({ loading: false }), 700));
-        console.log(elements);
   }
 
   handleOpen(url, description, title) {
@@ -100,7 +99,6 @@ class templateTab extends React.Component {
     );
 
       if (this.state.loading) {
-        console.log({elements});
             return (
               <div className='sweet-loading'>
            <DotLoader

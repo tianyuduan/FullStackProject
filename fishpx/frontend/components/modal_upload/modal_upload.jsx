@@ -44,6 +44,12 @@ class ModalUpload extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    this.props.createPhoto(this.state) ? (
+        alert("Your Image has been processed!")
+        ) : (
+        alert("There was an error with the upload")
+      )
+      
     this.props.createPhoto(this.state);
 
     this.setState(
@@ -52,7 +58,8 @@ class ModalUpload extends React.Component {
         image_url: '',
         id: this.state.id + 1,
       });
-  }
+
+    }
 
   handleNewRequest(request, index) {
     this.setState (
@@ -60,7 +67,6 @@ class ModalUpload extends React.Component {
         tag_ids: [...this.state.tag_ids, request.valueKey]
       }
     );
-
   }
 
   uploadFile(image) {
@@ -79,22 +85,17 @@ class ModalUpload extends React.Component {
                           });
                         }
                         });
-
   }
 
   componentDidMount() {
     this.props.fetchTags();
   }
 
-
-
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
-
 
   renderErrors() {
     return(
@@ -111,6 +112,28 @@ class ModalUpload extends React.Component {
   render() {
     const changeColor = 'white';
     const hoverColor = '#00FFFF';
+
+    const finishModal = () => (
+      this.props.createPhoto(this.state) ? (
+          <Dialog
+              className="completion_dialog"
+              title="Done!"
+              modal={true}
+              open={this.state.open}
+            >
+            Thank you for uploading! Your image has been processed to sent to the appropriate category.
+            </Dialog>
+          ) : (
+          <Dialog
+            className="completion_dialog"
+            title="Done!"
+            modal={true}
+            open={this.state.open}
+          >
+          There was an error with the upload.
+          </Dialog>
+          )
+    );
 
     const innerText = this.state.image_url === '' ? (
       <h1 className="clickheretoUpload">Click here to upload!</h1>
@@ -133,11 +156,9 @@ class ModalUpload extends React.Component {
       />,
     ];
 
-
     const {image_url} = this.state;
 
     return (
-
       <div className="uploadWrapper">
         <FileUpload label="Upload"
           className="upload"
@@ -161,7 +182,6 @@ class ModalUpload extends React.Component {
             onDrop={this.uploadFile}
             >
             {innerText}
-
           </DropZone>
           </div>
 
