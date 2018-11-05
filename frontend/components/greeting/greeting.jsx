@@ -1,7 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import GridListExampleSimple from '../image_grid/image_grid.jsx';
 import ModalSessionContainer from '../modal_session/modal_session_container.js';
 import HeaderHome from '../header/header.jsx';
 import ContentHome from '../content/content.jsx';
@@ -132,7 +131,6 @@ const splashPage = () => (
 			  </div>
       </div>
   </div>
-
 );
 
 export const personalGreeting = (currentUser, logout) => (

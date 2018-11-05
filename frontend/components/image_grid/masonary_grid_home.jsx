@@ -69,7 +69,7 @@ class MasonaryHome extends React.Component {
 
         let elements = tilesData.map((tile) => (
           <li className="imageGridUser">
-            <h1 className="imageGridTitle">{toTitleCase(tile.title)}</h1>
+            <h1 className="imageGridTitle" key={tile.title}>{toTitleCase(tile.title)}</h1>
               <img src={tile.img}
                 key={tile.img}
                 ></img>

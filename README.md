@@ -42,10 +42,86 @@ All the photos in the content page are implemented with react-Masonry, a javascr
 
 
 
+### Sample Code
+
+The site uses categories to render pictures under each tab. Instead of creating multiple container that did the same thing, I created a templateTab that takes in props.
+
+```javascript
+class templateTab extends React.Component {
+    constructor(props) {
+      super(props);
+
+      this.state = {
+       title: "",
+       description: "",
+       image_url: "",
+       tags: "",
+       open: false,
+       loading: true,
+       photosLists: props.photos
+      };
+      this.componentDidMount = this.componentDidMount.bind(this);
+      this.handleOpen = this.handleOpen.bind(this);
+      this.handleClose = this.handleClose.bind(this);
+    }
+  }
+```
+
+And depending on the props, the template Tab returns different sets of images.
+
+```javascript
+return (
+  <Masonry
+      className={'my-gallery-class'}
+      elementType={'ul'}
+      options={masonryOptions}
+      disableImagesLoaded={false}
+      updateOnEachImageLoad={false}
+      key={elements.title}
+  >
+      {elements}
+      {modal()}
+  </Masonry>
+);
+```
+
+```javascript
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Discover);
+```
+
+By matching state to props and dispatching the container. We are able to more smoothly render the images as the container only renders depending on the state.
+
+```javascript
+switchTab(state) {
+ switch(state) {
+   case 0:
+     return <DiscoverContainer/>;
+   case 1:
+     return <SeascapeContainer/>;
+   case 2:
+     return <WildlifeContainer/>;
+   case 3:
+     return <PeopleContainer/>;
+   case 4:
+     return <OtherContainer/>;
+   case 5:
+     return <PhotosIndexContainer/>;
+   default:
+     return <DiscoverContainer/>;
+ }
+}
+```
+
+### Challenges
+  Due to the nature of the detail-heavy images, keep the site from slow performance has been a challenge. I had to think of different to render images that made it less taxing on computers, this included loading bars and only rendering what was necessary.  
+
 ## Future Improvements
 
 ### Infinite Scroll
-  Due to the nature of high-res, detail-heavy websites, having Infinite Scroll will optimize page load, which will allow users to scroll through many images in content page more efficiently
+  Having Infinite Scroll will optimize page load, which will allow users to scroll through many images in content page more efficiently
 
 ### likes and comments
 User should be able to like an image, comment on an image. Once like and comments have been implemented, an Popular Category could be implemented so User can browse through heavily liked images.

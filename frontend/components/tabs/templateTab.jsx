@@ -116,6 +116,7 @@ class templateTab extends React.Component {
                options={masonryOptions}
                disableImagesLoaded={false}
                updateOnEachImageLoad={false}
+               key={elements.title}
            >
                {elements}
                {modal()}
