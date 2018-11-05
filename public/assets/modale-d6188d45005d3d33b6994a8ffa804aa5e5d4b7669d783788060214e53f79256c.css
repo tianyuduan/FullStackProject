@@ -1,0 +1,28 @@
+/* line 6, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/modale.scss */
+.Login-form-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* line 13, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/modale.scss */
+.login {
+  display: inline-block;
+}
+
+/* line 30, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/modale.scss */
+.signup {
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+/* line 43, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/modale.scss */
+.inputLabel {
+  margin-right: 50px;
+}
+
+/* line 48, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/modale.scss */
+.passwordLabel {
+  margin-right: 50px;
+}

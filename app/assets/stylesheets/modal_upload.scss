@@ -1,0 +1,103 @@
+#img-preview {
+	width: 50%;
+	height: 50%;
+}
+
+.uploadWrapper {
+	position: absolute;
+	right: 2%;
+	top: 3%;
+	 :hover {
+		z-index: 2;
+		-webkit-transition: all 200ms ease-in;
+		-webkit-transform: scale(1.05);
+		-ms-transition: all 200ms ease-in;
+		-ms-transform: scale(1.05);
+		-moz-transition: all 200ms ease-in;
+		-moz-transform: scale(1.05);
+		transition: all 200ms ease-in;
+		transform: scale(1.05);
+	}
+}
+
+.dialogPhotoUpload {
+	text-align: center;
+}
+
+.clickheretoUpload {
+	text-align: center;
+	vertical-align: middle;
+	font-size: 24px;
+	padding-top: 50px;
+	 :hover {
+		opacity: .7;
+		background-color: cyan;
+	}
+}
+
+.inputWrapper {
+	padding-top: 50px;
+}
+
+.dropzoneWrapper {
+	margin-left: 260px;
+	// background-color: black;
+	 :hover {
+		opacity: .7
+	}
+}
+
+.Category {
+	position: absolute;
+	top: 81%;
+	left: 24.9%;
+	display: inline-block;
+	// margin-right: 35%;
+	// margin-top: 800%;
+}
+
+.categoryWrapper {
+	margin-left: 48px;
+	display: inline-block;
+}
+
+.form-modal {
+	margin-right: 10px;
+	width: 100px !important;
+	text-align: left;
+}
+
+.settingsButton0 {
+	position: absolute !important;
+	right: 104px;
+	top: 2.2%;
+	 :hover {
+		z-index: 2;
+		-webkit-transition: all 200ms ease-in;
+		-webkit-transform: scale(1.05);
+		-ms-transition: all 200ms ease-in;
+		-ms-transform: scale(1.05);
+		-moz-transition: all 200ms ease-in;
+		-moz-transform: scale(1.05);
+		transition: all 200ms ease-in;
+		transform: scale(1.05);
+	}
+}
+
+.sweet-loading {
+	z-index: 100;
+	margin-left: 45%;
+	margin-top: 15%;
+}
+
+.form-spacing-title {
+	margin-right: 6em;
+}
+
+.form-spacing-desc {
+	margin-right: 2.8em;
+}
+
+.category-auto {
+	margin-left: 5em;
+}

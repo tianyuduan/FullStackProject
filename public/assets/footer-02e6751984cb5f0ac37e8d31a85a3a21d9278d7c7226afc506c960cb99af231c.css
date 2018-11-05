@@ -1,0 +1,15 @@
+/* line 3, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/footer.scss */
+.footer-Wrap {
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  background-image: url("http://www.wallpaperhdc.com/wp-content/uploads/2017/05/minimalist-photography-wallpaper-hd-images.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.95;
+  margin-bottom: -200px;
+  width: 100%;
+  background-position: 50% 50%;
+}
