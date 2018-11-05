@@ -42,8 +42,8 @@ return (
       />
     </div>
     </div>
-    <video autoPlay muted loop>
-    <source className='Video' src="https://res.cloudinary.com/djubcegxh/video/upload/v1500601586/featured-vid_pnhmuh.mp4"
+    <video autoPlay muted loop className='video-home'>
+    <source className='video-home' src="https://res.cloudinary.com/djubcegxh/video/upload/v1500601586/featured-vid_pnhmuh.mp4"
       type="video/mp4"
       ></source>
     </video>

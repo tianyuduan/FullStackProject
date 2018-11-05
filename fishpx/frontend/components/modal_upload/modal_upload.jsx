@@ -166,33 +166,34 @@ class ModalUpload extends React.Component {
           </div>
 
           <div className="inputWrapper">
-          <label className="Title">Title:</label>
-         <TextField id={this.state.title} className="image_title_text_field" type="text"
+        <span className="title-form">Title:</span><span className='form-spacing-title'></span>
+         <span><TextField id={this.state.title} className="image_title_text_field" type="text"
            value={this.state.title}
            onChange={this.update('title')}
            className="title-input"
            hintText="   Please type your title "
-           />
+           /></span>
          <br></br>
-         <label className="Description">Description:</label>
-         <TextField id={this.state.description} className="image_description_text_field" type="text"
+         <span className="desc-form">Description:</span><span className='form-spacing-desc'></span>
+         <span><TextField id={this.state.description} className="image_description_text_field" type="text"
            value={this.state.description}
            onChange={this.update('description')}
            className="description-input"
            hintText="   Please type your description"
-           />
+           /></span>
          <br></br>
          <div className="categoryWrapper">
-         <label className="Category">Category:</label>
-           <AutoCompleteData id={this.state.tag_names}
-            className="image_title_text_field" type="text"
-           value={this.state.tag_names}
-           onChange={this.update('tag_ids')}
-           className="tag-input"
-           onNewRequest={this.handleNewRequest}
-           tagData={this.props.tagData}
-           />
-         </div>
+           <span className="Category">Category:</span><span className='form-spacing-category'></span>
+           <div className='category-auto'>
+             <AutoCompleteData id={this.state.tag_names}
+             className="image_title_text_field" type="text"
+             value={this.state.tag_names}
+             onChange={this.update('tag_ids')}
+             onNewRequest={this.handleNewRequest}
+             tagData={this.props.tagData}
+             />
+            </div>
+           </div>
          </div>
           </Dialog>
       </div>

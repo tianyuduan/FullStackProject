@@ -34,6 +34,7 @@ const Main = () => (
 
 const splashPage = () => (
   <div>
+  <div className="is-preload body-replace">
       <Logo></Logo>
       <ModalSessionContainer/>
       <ContentHome></ContentHome>
@@ -94,7 +95,7 @@ const splashPage = () => (
 							</section>
 					</div>
 
-					<footer id="footer">
+					<footer id="footer" className='last-footer'>
 						<section>
 							<h2>Contact me</h2>
 							<p>Hello! I am a software developer in the Bay Area.
@@ -117,7 +118,8 @@ const splashPage = () => (
   						</section>
 					</footer>
 
-			</div>
+			  </div>
+      </div>
   </div>
 
 );
