@@ -44,6 +44,31 @@ All the photos in the content page are implemented with react-Masonry, a javascr
 
 ### Code Snippets
 
+The site uses categories to render pictures under each tab. Instead of creating multiple container that did the same thing, I created a templateTab that takes in props.
+
+```javascript
+class templateTab extends React.Component {
+    constructor(props) {
+      super(props);
+
+      this.state = {
+       title: "",
+       description: "",
+       image_url: "",
+       tags: "",
+       open: false,
+       loading: true,
+       photosLists: props.photos
+      };
+      this.componentDidMount = this.componentDidMount.bind(this);
+      this.handleOpen = this.handleOpen.bind(this);
+      this.handleClose = this.handleClose.bind(this);
+    }
+  }
+```
+
+And depending on the props, the template Tab returns different sets of images.
+
 ```javascript
 return (
   <Masonry
@@ -59,6 +84,15 @@ return (
   </Masonry>
 );
 ```
+
+```javascript
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Discover);
+```
+
+By matching state to props and dispatching the container. We are able to more smoothly render the images as the container only renders depending on the state. 
 
 ```javascript
 switchTab(state) {
@@ -81,9 +115,7 @@ switchTab(state) {
 }
 ```
 
- what?
 
- 
 ## Future Improvements
 
 ### Infinite Scroll
