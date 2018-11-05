@@ -1,0 +1,66 @@
+/* line 4, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+.header1Text {
+  position: absolute;
+  z-index: 1;
+  width: 900px;
+  font-weight: bold;
+  text-align: center;
+  top: 500px;
+  font-size: 56px;
+}
+
+/* line 14, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+.header2Text {
+  position: absolute;
+  z-index: 1;
+  width: 900px;
+  text-align: center;
+  top: 650px;
+  font-size: 32px;
+}
+
+/* line 23, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+.Wrap {
+  height: 800px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  background-image: url("http://res.cloudinary.com/djubcegxh/image/upload/v1500567256/fbd0b712d0090ce83aefc9284dfbb759_1_qynzgy.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  top: -200px;
+  width: 100%;
+  background-position: 50% 70%;
+}
+
+/* line 43, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+  display: flex;
+}
+
+/* line 49, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+.header2Text, .header1Text {
+  font-family: 'Josefin Slab', serif;
+  text-shadow: 2px 2px #0C090A;
+  color: white;
+}
+
+/* line 56, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 62, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/header.scss */
+html, body {
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}

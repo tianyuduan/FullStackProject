@@ -1,0 +1,12 @@
+/* line 2, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/imagegrid.scss */
+.image-grid {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+/* line 7, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/imagegrid.scss */
+.image-grid img {
+  display: flex;
+  margin: 0 auto;
+  align-content: center;
+  align-self: center;
+}

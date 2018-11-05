@@ -1,0 +1,37 @@
+/* line 2, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/imagegrid.scss */
+.image-grid {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+/* line 6, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/imagegrid.scss */
+.image-grid img {
+  display: flex;
+  margin: 0 auto;
+  align-content: center;
+  align-self: center;
+}
+
+/* line 15, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/imagegrid.scss */
+.imageGridUser img {
+  margin-bottom: 20px;
+  width: 26.5vw;
+}
+
+/* line 23, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/imagegrid.scss */
+.imageGridUser :hover {
+  opacity: 0.8;
+}
+
+/* line 30, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/imagegrid.scss */
+.my-gallery-class {
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+/* line 38, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/imagegrid.scss */
+.tabsCss {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 56.5%;
+}

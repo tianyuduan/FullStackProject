@@ -1,0 +1,42 @@
+/* line 3, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/footer.scss */
+.footer-Wrap {
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  background-image: url("http://www.wallpaperhdc.com/wp-content/uploads/2017/05/minimalist-photography-wallpaper-hd-images.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.95;
+  margin-bottom: -200px;
+  width: 100%;
+  background-position: 50% 50%;
+  font-size: 72px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: 2px;
+  color: #323031;
+}
+
+/* line 25, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/footer.scss */
+.about {
+  width: 700px;
+  font-size: 24px;
+}
+
+/* Circle */
+/* line 32, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/footer.scss */
+.hover15 {
+  display: block;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+/* line 40, /Users/tianyuduan/Desktop/appacademy/fullstack/fishpx/app/assets/stylesheets/footer.scss */
+.hover15 :hover {
+  -webkit-animation: circle .75s;
+  animation: circle .75s;
+}

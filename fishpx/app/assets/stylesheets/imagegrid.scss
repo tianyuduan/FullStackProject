@@ -1,0 +1,238 @@
+.image-grid {
+	padding-left: 50px;
+	padding-right: 50px;
+	img {
+		display: flex;
+		margin: 0 auto;
+		align-content: center;
+		align-self: center;
+	}
+}
+
+.imageGridUser {
+	img {
+		width: 26.5vw;
+		background-color: black;
+	}
+}
+
+.imageGridUser {
+	overflow: hidden;
+	margin-bottom: 20px;
+	background-color: black;
+}
+
+.imageGridUser img {
+	max-width: 100%;
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+}
+
+.imageGridUser img:hover {
+	cursor: pointer;
+	opacity: 0.5;
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+}
+
+.imageGridUser {
+	text-align: center;
+}
+
+.imageGridUser h1 {
+	position: absolute;
+	z-index: 15;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	margin-bottom: 40px;
+	color: white;
+	font-size: 56px;
+	display: none;
+}
+
+@keyframes fadeInOut {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes fadeInOut {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.imageGridTitle {
+	color: rgba(255, 255, 255, .5) !important;
+	font-family: 'Gruppo', cursive;
+	-webkit-animation: fadeInOut 5s;
+	-moz-animation: fadeInOut 5s;
+	-o-animation: fadeInOut 5s;
+	animation: fadeInOut 5s;
+}
+
+.imageGridUser:hover .imageGridTitle {
+	display: block;
+}
+
+.my-gallery-class {
+	padding-top: 20px;
+	margin: 0 auto;
+}
+
+.remove-padding {
+	padding-top: -40px !important;
+}
+
+.tabsCss {
+	position: absolute;
+	left: 8%;
+	right: 8%;
+	top: 61%;
+}
+
+.Discover div {
+	color: #666;
+	text-transform: uppercase;
+}
+
+.Discover div:after {
+	display: block;
+	content: '';
+	border-bottom: solid 3px #019fb6;
+	transform: scaleX(0);
+	transition: transform 250ms ease-in-out;
+}
+
+.Discover div:hover:after {
+	transform: scaleX(1);
+}
+
+.Discover div {
+	color: #666;
+	text-transform: uppercase;
+}
+
+.Discover div:after {
+	display: block;
+	content: '';
+	border-bottom: solid 3px #019fb6;
+	transform: scaleX(0);
+	transition: transform 250ms ease-in-out;
+}
+
+.Discover div:hover:after {
+	transform: scaleX(1);
+}
+
+.Wildlife div {
+	color: #666;
+	text-transform: uppercase;
+}
+
+.Wildlife div:after {
+	display: block;
+	content: '';
+	border-bottom: solid 3px #019fb6;
+	transform: scaleX(0);
+	transition: transform 250ms ease-in-out;
+}
+
+.Wildlife div:hover:after {
+	transform: scaleX(1);
+}
+
+.Seascape div {
+	color: #666;
+	text-transform: uppercase;
+}
+
+.Seascape div:after {
+	display: block;
+	content: '';
+	border-bottom: solid 3px #019fb6;
+	transform: scaleX(0);
+	transition: transform 250ms ease-in-out;
+}
+
+.Seascape div:hover:after {
+	transform: scaleX(1);
+}
+
+.People div {
+	color: #666;
+	text-transform: uppercase;
+}
+
+.People div:after {
+	display: block;
+	content: '';
+	border-bottom: solid 3px #019fb6;
+	transform: scaleX(0);
+	transition: transform 250ms ease-in-out;
+}
+
+.People div:hover:after {
+	transform: scaleX(1);
+}
+
+.Others div {
+	color: #666;
+	text-transform: uppercase;
+}
+
+.Others div:after {
+	display: block;
+	content: '';
+	border-bottom: solid 3px #019fb6;
+	transform: scaleX(0);
+	transition: transform 250ms ease-in-out;
+}
+
+.Others div:hover:after {
+	transform: scaleX(1);
+}
+
+.AllUserUploads div {
+	color: #666;
+	text-transform: uppercase;
+}
+
+.AllUserUploads div:after {
+	display: block;
+	content: '';
+	border-bottom: solid 3px #019fb6;
+	transform: scaleX(0);
+	transition: transform 250ms ease-in-out;
+}
+
+.AllUserUploads div:hover:after {
+	transform: scaleX(1);
+}
+
+.lineTags {
+	color: gray;
+	z-index: 5;
+	margin-bottom: 100px;
+}
+
+.circularProgress {
+	margin-left: 43%;
+	margin-top: 8%;
+}
