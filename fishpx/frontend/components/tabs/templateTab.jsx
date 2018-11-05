@@ -95,7 +95,7 @@ class templateTab extends React.Component {
             key={tile.image_url}
             ></img>
         </li>
-    )
+      )
     );
 
       if (this.state.loading) {

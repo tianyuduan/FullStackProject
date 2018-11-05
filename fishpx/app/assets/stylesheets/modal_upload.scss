@@ -49,8 +49,8 @@
 
 .Category {
 	position: absolute;
-	top: 80%;
-	left: 26.5%;
+	top: 81%;
+	left: 24.9%;
 	display: inline-block;
 	// margin-right: 35%;
 	// margin-top: 800%;
@@ -61,30 +61,10 @@
 	display: inline-block;
 }
 
-.Title {
+.form-modal {
 	margin-right: 10px;
-}
-
-.Description {
-	margin-right: 10px;
-}
-
-.image_title_text_field {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-}
-
-.image_title_text_field input {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-}
-
-.image_title_text_field div {
-	position: absolute;
-	top: 50%;
-	left: 50%;
+	width: 100px !important;
+	text-align: left;
 }
 
 .settingsButton0 {
@@ -107,5 +87,17 @@
 .sweet-loading {
 	z-index: 100;
 	margin-left: 45%;
-	margin-top: 20%;
+	margin-top: 15%;
+}
+
+.form-spacing-title {
+	margin-right: 6em;
+}
+
+.form-spacing-desc {
+	margin-right: 2.8em;
+}
+
+.category-auto {
+	margin-left: 5em;
 }

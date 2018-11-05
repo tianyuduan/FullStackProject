@@ -1,33 +1,33 @@
 video {
     position: absolute; right: 0; top: 0;
     // min-width: 100%; min-height: 100%;
-    width: auto; z-index: -100;
+    width: auto;
     background-size: cover;
     width: 100vw;
 }
 
 
 .video_font_1 {
-  font-family: sans-serif;
+  position: relative;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 72px;
   color: white;
-  margin-top: 30%;
+  margin-top: 25%;
   text-indent: 60px;
   text-shadow: 2px 2px #0C090A;
   font-weight: bold;
+  z-index: 10 ;
 }
 
 .video_font_2 {
-  font-family: sans-serif;
+  position: relative;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 48px;
   color: white;
-  margin-top: 0%;
+  margin-top: -2%;
   text-indent: 80px;
   text-shadow: 2px 2px #0C090A;
-}
-
-.logout-button {
-
+  z-index: 10 ;
 }
 
 .logout-wrap {

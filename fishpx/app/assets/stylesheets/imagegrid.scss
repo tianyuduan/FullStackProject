@@ -79,6 +79,7 @@
 }
 
 .imageGridTitle {
+	color: rgba(255, 255, 255, .5) !important;
 	font-family: 'Gruppo', cursive;
 	-webkit-animation: fadeInOut 5s;
 	-moz-animation: fadeInOut 5s;
@@ -90,16 +91,15 @@
 	display: block;
 }
 
-//
 .my-gallery-class {
 	padding-top: 20px;
 	margin: 0 auto;
 }
 
-//
-// .masonaryUser{
-// }
-//
+.remove-padding {
+	padding-top: -40px !important;
+}
+
 .tabsCss {
 	position: absolute;
 	left: 8%;

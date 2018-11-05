@@ -47,6 +47,7 @@ export default class SettingsDrop extends React.Component {
 
   handleLogout() {
     this.props.logout();
+    window.location.reload();
   }
 
   handleOpen() {

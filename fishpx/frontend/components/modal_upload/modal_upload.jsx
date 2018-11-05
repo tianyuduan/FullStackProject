@@ -44,6 +44,12 @@ class ModalUpload extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    this.props.createPhoto(this.state) ? (
+        alert("Your Image has been processed!")
+        ) : (
+        alert("There was an error with the upload")
+      )
+      
     this.props.createPhoto(this.state);
 
     this.setState(
@@ -52,7 +58,8 @@ class ModalUpload extends React.Component {
         image_url: '',
         id: this.state.id + 1,
       });
-  }
+
+    }
 
   handleNewRequest(request, index) {
     this.setState (
@@ -60,7 +67,6 @@ class ModalUpload extends React.Component {
         tag_ids: [...this.state.tag_ids, request.valueKey]
       }
     );
-
   }
 
   uploadFile(image) {
@@ -79,22 +85,17 @@ class ModalUpload extends React.Component {
                           });
                         }
                         });
-
   }
 
   componentDidMount() {
     this.props.fetchTags();
   }
 
-
-
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
-
 
   renderErrors() {
     return(
@@ -111,6 +112,28 @@ class ModalUpload extends React.Component {
   render() {
     const changeColor = 'white';
     const hoverColor = '#00FFFF';
+
+    const finishModal = () => (
+      this.props.createPhoto(this.state) ? (
+          <Dialog
+              className="completion_dialog"
+              title="Done!"
+              modal={true}
+              open={this.state.open}
+            >
+            Thank you for uploading! Your image has been processed to sent to the appropriate category.
+            </Dialog>
+          ) : (
+          <Dialog
+            className="completion_dialog"
+            title="Done!"
+            modal={true}
+            open={this.state.open}
+          >
+          There was an error with the upload.
+          </Dialog>
+          )
+    );
 
     const innerText = this.state.image_url === '' ? (
       <h1 className="clickheretoUpload">Click here to upload!</h1>
@@ -133,11 +156,9 @@ class ModalUpload extends React.Component {
       />,
     ];
 
-
     const {image_url} = this.state;
 
     return (
-
       <div className="uploadWrapper">
         <FileUpload label="Upload"
           className="upload"
@@ -161,38 +182,38 @@ class ModalUpload extends React.Component {
             onDrop={this.uploadFile}
             >
             {innerText}
-
           </DropZone>
           </div>
 
           <div className="inputWrapper">
-          <label className="Title">Title:</label>
-         <TextField id={this.state.title} className="image_title_text_field" type="text"
+        <span className="title-form">Title:</span><span className='form-spacing-title'></span>
+         <span><TextField id={this.state.title} className="image_title_text_field" type="text"
            value={this.state.title}
            onChange={this.update('title')}
            className="title-input"
            hintText="   Please type your title "
-           />
+           /></span>
          <br></br>
-         <label className="Description">Description:</label>
-         <TextField id={this.state.description} className="image_description_text_field" type="text"
+         <span className="desc-form">Description:</span><span className='form-spacing-desc'></span>
+         <span><TextField id={this.state.description} className="image_description_text_field" type="text"
            value={this.state.description}
            onChange={this.update('description')}
            className="description-input"
            hintText="   Please type your description"
-           />
+           /></span>
          <br></br>
          <div className="categoryWrapper">
-         <label className="Category">Category:</label>
-           <AutoCompleteData id={this.state.tag_names}
-            className="image_title_text_field" type="text"
-           value={this.state.tag_names}
-           onChange={this.update('tag_ids')}
-           className="tag-input"
-           onNewRequest={this.handleNewRequest}
-           tagData={this.props.tagData}
-           />
-         </div>
+           <span className="Category">Category:</span><span className='form-spacing-category'></span>
+           <div className='category-auto'>
+             <AutoCompleteData id={this.state.tag_names}
+             className="image_title_text_field" type="text"
+             value={this.state.tag_names}
+             onChange={this.update('tag_ids')}
+             onNewRequest={this.handleNewRequest}
+             tagData={this.props.tagData}
+             />
+            </div>
+           </div>
          </div>
           </Dialog>
       </div>

@@ -14,9 +14,9 @@ const FooterHome = () => (
       <div className='footer-Wrap'> About
         <br></br>
         <h1 className='about'>
-  Fish px is a web application inspired by 500px, an oceananic photography community
-  based on discovering their own passion for taking photography, improving their skills, and
-  above all having fun!
+      Fish px is a web application inspired by 500px, an oceananic photography community
+      based on discovering their own passion for taking photography, improving their skills, and
+      above all having fun!
         </h1>
       </div>
 

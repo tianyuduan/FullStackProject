@@ -1,6 +1,6 @@
 div .Logo.Container {
   text-indent: 50px;
-  font-family: 'Gruppo', cursive;
+  font-family: 'Gruppo', 'cursive';
   letter-spacing: 2px;
   color: white;
   text-shadow: 2px 2px #0C090A;
@@ -18,12 +18,13 @@ div .Logo.Container {
   top: 0;
   font-size: 72px;
   margin-top: 20px;
+  z-index: 11;
 }
 
 .LogoText2 {
   position: relative;
+  width: 300px;
   font-size: 48px;
   padding-left: 150px;
-
-
+  z-index: 11;
 }
