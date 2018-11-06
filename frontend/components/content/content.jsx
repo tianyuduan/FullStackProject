@@ -20,6 +20,7 @@ class ContentHome extends React.Component {
 render() {
 
 return (
+
   <div className= "Video">
     <h1 className= "video_font_1">Explore Another World</h1>
     <h1 className= "video_font_2">Discover the depths of the unknown</h1>

@@ -49,7 +49,7 @@ class ModalUpload extends React.Component {
         ) : (
         alert("There was an error with the upload")
       )
-      
+
     this.props.createPhoto(this.state);
 
     this.setState(

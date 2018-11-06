@@ -40,8 +40,6 @@ All the photos in the content page are implemented with react-Masonry, a javascr
 
 ![gif of imageGrid](https://user-images.githubusercontent.com/26663031/28739268-70ff4012-73ae-11e7-89d6-58cd55fa5223.gif)
 
-
-
 ### Sample Code
 
 The site uses categories to render pictures under each tab. Instead of creating multiple container that did the same thing, I created a templateTab that takes in props.
