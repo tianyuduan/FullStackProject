@@ -50,7 +50,7 @@ const splashPage = () => (
       <ModalSessionContainer/>
       <ContentHome></ContentHome>
 
-			<div id="wrapper">
+			<div id="wrapper" className='margin-border'>
             <link rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
               />
